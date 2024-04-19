@@ -109,3 +109,4 @@ async function getData() {
 getData().then((data) => {
   console.log(data);
 });
+
