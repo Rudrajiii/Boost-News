@@ -50,7 +50,7 @@ btn.addEventListener("click", async () => {
         };
         imageElement.src = image;
         const description = data["articles"][i]["description"];
-        if(description === "[Removed]"){
+        if(description === "[Removed]" || description === null){
           descriptionElement.textContent = "We are Sorry , Can not display this article temporarilly , Please wait for the server response."
         }else{
           descriptionElement.textContent = description;
@@ -92,7 +92,7 @@ async function getData() {
           };
           imageElement.src = image;
           let description = data["articles"][i]["description"];
-          if(description === "[Removed]"){
+          if(description === "[Removed]" || description === null){
             descriptionElement.textContent = "We are Sorry , Can not display this article temporarilly , Please wait for the server response."
           }else{
             descriptionElement.textContent = description;
