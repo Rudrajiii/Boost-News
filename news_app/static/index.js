@@ -13,6 +13,7 @@ const btn = document.querySelector(".btn");
 const titlee = document.querySelector(".title");
 const img = document.getElementById("img");
 const des = document.querySelector(".des");
+const con = document.querySelector(".con");
 const card = document.querySelectorAll(".card");
 btn.addEventListener("click", async () => {
   try {
@@ -31,6 +32,7 @@ btn.addEventListener("click", async () => {
       const titleElement = item.querySelector(".title");
       const imageElement = item.querySelector("#img");
       const descriptionElement = item.querySelector(".des");
+      const contentElement = item.querySelector(".con");
 
       if (data["articles"] && data["articles"][i]) {
         
@@ -55,6 +57,9 @@ btn.addEventListener("click", async () => {
         }else{
           descriptionElement.textContent = description;
         }
+
+        const content = data["articles"][i]["content"];
+        content == null ? "Not found" : contentElement.textContent=content; 
       } else {
         
         console.log("Not enough articles for card", i + 1);
@@ -75,6 +80,8 @@ async function getData() {
         const titleElement = item.querySelector(".title");
         const imageElement = item.querySelector("#img");
         const descriptionElement = item.querySelector(".des");
+        const contentElement = item.querySelector(".con");
+
   
         if (data["articles"] && data["articles"][i]) {
           // Check if data exists for this index
@@ -101,6 +108,8 @@ async function getData() {
           // Handle case where there are less than 3 articles
           console.log("Not enough articles for card", i + 1);
         }
+        const content = data["articles"][i]["content"];
+        content == null ? "Not found" : contentElement.textContent=content; 
       });
   } catch (error) {
     console.error("Error fetching data:", error);
