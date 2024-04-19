@@ -33,15 +33,30 @@ btn.addEventListener("click", async () => {
       const descriptionElement = item.querySelector(".des");
 
       if (data["articles"] && data["articles"][i]) {
-        // Check if data exists for this index
+        
         const title = data["articles"][i]["title"];
-        titleElement.textContent = title;
+        if(title === "[Removed]"){
+          titleElement.textContent = "Due to Some technical issues , this article can not be shown right now. Please Wait for some time.";
+        }else{
+          titleElement.textContent = title;
+        }
         const image = data["articles"][i]["urlToImage"];
+
+        
+        imageElement.onerror = () => {
+          console.warn("Image failed to load:", image);
+          imageElement.src = "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg"; // Replace with a default image URL
+          
+        };
         imageElement.src = image;
         const description = data["articles"][i]["description"];
-        descriptionElement.textContent = description;
+        if(description === "[Removed]"){
+          descriptionElement.textContent = "We are Sorry , Can not display this article temporarilly , Please wait for the server response."
+        }else{
+          descriptionElement.textContent = description;
+        }
       } else {
-        // Handle case where there are less than 3 articles
+        
         console.log("Not enough articles for card", i + 1);
       }
     });
@@ -64,11 +79,24 @@ async function getData() {
         if (data["articles"] && data["articles"][i]) {
           // Check if data exists for this index
           const title = data["articles"][i]["title"];
-          titleElement.textContent = title;
+          if(title === "[Removed]"){
+            titleElement.textContent = "Due to Some technical issues , this article can not be shown right now. Please Wait for some time.";
+          }else{
+            titleElement.textContent = title;
+          }
           const image = data["articles"][i]["urlToImage"];
+          imageElement.onerror = () => {
+            console.warn("Image failed to load:", image);
+            imageElement.src = "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg"; // Replace with a default image URL
+            
+          };
           imageElement.src = image;
-          const description = data["articles"][i]["description"];
-          descriptionElement.textContent = description;
+          let description = data["articles"][i]["description"];
+          if(description === "[Removed]"){
+            descriptionElement.textContent = "We are Sorry , Can not display this article temporarilly , Please wait for the server response."
+          }else{
+            descriptionElement.textContent = description;
+          }
         } else {
           // Handle case where there are less than 3 articles
           console.log("Not enough articles for card", i + 1);
