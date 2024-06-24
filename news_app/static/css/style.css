@@ -10,26 +10,35 @@ html , body{
 .card-wrapper{
     width: 100%;
     height: 100%;
-    display: flex;
+    display: grid;
+    grid-template-rows: repeat(auto , 1fr);
+    grid-template-columns: repeat(3 , 1fr);
     gap: 3vh;
+    padding: 1rem 3rem;
 }
 .card{
-    width: 500px;
-    height: 600px;
-    border: 2px solid black;
+    width: 450px;
+    min-height:720px;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 2vh;
+    padding: 1rem;
+    outline: none;
     & .title{
-        /* position: absolute; */
         width: 100%;
-        /* border: 2px solid red; */
+        font-weight: 600;
+        font-size: large;
+    }
+    & .sett{
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
     }
     & .imag{
         width: 100%;
         height: 50%;
-        /* border: 2px solid blue; */
         & #img{
             width: 100%;
             height: 100%;
@@ -38,11 +47,113 @@ html , body{
             background-repeat: no-repeat;
             image-orientation: from-image;
             image-resolution: high resolution;
+            border-radius: .4rem;
         }
     }
     & .des{
         width: 100%;
-        overflow:auto !important;
+        min-height: 18vh;
+        overflow: auto !important;
         margin-top: 10px;
     }
+}
+nav{
+    width: 100%;
+    height: 10vh;
+    background: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 13vh;
+    overflow: hidden;
+  }
+  
+  
+  .scroll {
+    display: flex;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(#000000, 0.5);
+    
+    div {
+      font-weight: 900;
+      font-size: 4em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #212121;
+      background-color: #fff;
+      animation: animate 40s -40s linear infinite;
+      will-change: transform;
+      
+      &:nth-child(2) {
+        animation: animate2 40s -20s linear infinite;
+      }
+    }
+    
+    span {
+      -webkit-text-stroke: 2px #000000;
+      color: #ffffff;
+    }
+  }
+  
+  .text1 {
+    transform: rotate(30deg) translate(-200px, 200px);
+  }
+  
+  .text2 {
+    transform: rotate(-25deg) translate(-200px, 120px);
+  }
+  
+  .text3 {
+    transform: rotate(25deg) translate(-200px, 300px);
+  }
+  
+  .text3 {
+    transform: rotate(-2deg) translate(-200px, -150px);
+  }
+  
+  .text5 {
+    transform: rotate(5deg) translate(-200px, 250px);
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes animate2 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+.nav2{
+    width: 100%;
+    display: flex;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-evenly;
+    & h3{
+        font-size: 1.2rem !important;
+    }
+}
+
+
+.popular_feed{
+    width: 100%;
+    min-height: 15vh;
+    background: green;
 }

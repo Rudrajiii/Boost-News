@@ -1,8 +1,8 @@
-from flask import Flask, render_template , jsonify
+from flask import Flask, render_template , jsonify , request
 from eventregistry import EventRegistry, QueryArticlesIter
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/' , methods=['GET'])
 def index():
   return render_template('index.html')
 
@@ -42,6 +42,7 @@ def get_articles():
         articles.append(article_data)
 
     print(articles[0])
+    print("h",articles)
     return render_template("ai_card.html" , articles = articles)
 
 if __name__ == '__main__':
