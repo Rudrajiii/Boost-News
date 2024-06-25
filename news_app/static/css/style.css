@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -9,8 +10,9 @@ html , body{
 }
 .card-wrapper{
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: grid;
+    background: whitesmoke;
     grid-template-rows: repeat(auto , 1fr);
     grid-template-columns: repeat(3 , 1fr);
     gap: 3vh;
@@ -18,12 +20,12 @@ html , body{
 }
 .card{
     width: 450px;
-    min-height:720px;
+    min-height:850px;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 2vh;
-    padding: 1rem;
+    padding: 1.5rem;
     outline: none;
     & .title{
         width: 100%;
@@ -39,6 +41,7 @@ html , body{
     & .imag{
         width: 100%;
         height: 50%;
+        margin-bottom: 10px;
         & #img{
             width: 100%;
             height: 100%;
@@ -50,23 +53,55 @@ html , body{
             border-radius: .4rem;
         }
     }
-    & .des{
-        width: 100%;
-        min-height: 18vh;
-        overflow: auto !important;
-        margin-top: 10px;
-    }
+}
+.des{
+  width: 100%;
+  overflow: hidden !important;
+  margin-bottom: 10px;
+}
+#hot{
+  display: flex;
+  width: 100%;
+  min-height: 40vh;
+  gap: 3vh;
+  padding:1rem 3rem;
+  position: relative;
+  background: whitesmoke;
+}
+.right_card , .left_card{
+  width: 50%;
+  height: 100%;
+  background: #e23939;
+  border-radius: .5rem;
 }
 nav{
     width: 100%;
-    height: 10vh;
-    background: yellow;
+    height: 15vh;
+    /* background: yellow; */
     display: flex;
     align-items: center;
+    position: relative;
     justify-content: space-between;
     z-index: 99;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-
+.logo{
+  width: 20vh;
+  height: 8vh;
+  margin-left: 1rem;
+  transform: scale(1.7);
+  image-resolution: high resolution;
+  filter: brightness(1);
+  overflow: hidden;
+}
+.brandName{
+  font-size: 1.4rem !important;
+}
+#newslogo{
+  width: 100%;
+  height: inherit !important;
+  aspect-ratio: 1/1;
+}
 section {
     position: relative;
     width: 100%;
@@ -120,7 +155,14 @@ section {
   .text5 {
     transform: rotate(5deg) translate(-200px, 250px);
   }
-  
+.bd-placeholder-img{
+  height: 80vh !important;
+  object-fit: cover;
+  background-position: center center !important;
+  background-repeat: no-repeat;
+  image-orientation: from-image;
+  image-resolution: high resolution;
+}
   @keyframes animate {
     0% {
       transform: translateX(100%);
@@ -155,5 +197,40 @@ section {
 .popular_feed{
     width: 100%;
     min-height: 15vh;
-    background: green;
+    background: whitesmoke;
+}
+.headline{
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  padding: 1rem 3rem;
+  background: whitesmoke;
+  width: 100%;
+  min-height: 20vh;
+}
+@media (width <= 1300px){
+  .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    place-items: center;
+    gap: 3vh;
+  }
+  .card{
+    width: 100%;
+    min-height: 500px !important;
+  }
+}
+@media (width <= 900px){
+  .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(1 , 1fr);
+    place-items: center;
+    gap: 3vh;
+    padding: 1rem !important;
+  }
+  .card{
+    width: 100%;
+    min-height: 100% !important;
+  }
 }

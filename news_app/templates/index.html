@@ -1,69 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News-App</title>
-    <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+    <script
+      src="{{ url_for('static', filename='js/index.js') }}"
+      defer
+    ></script>
     <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/aiNews.js') }}" defer></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-</head>
-<body>
-     <nav>
-        <div class="logo">
-            <h1>Aaj Taak</h1>
+    <script
+      src="{{ url_for('static', filename='js/aiNews.js') }}"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img
+          id="newslogo"
+          src="https://image.freepik.com/free-vector/newspaper-logo_10250-2352.jpg"
+          alt="news_logo"
+        />
+      </div>
+      <div>
+        <h1
+          id="brandName"
+          style="
+            font-family: 'Merriweather';
+            font-weight: 900;
+            font-size: 3.2rem;
+          "
+        >
+          Boost
+          <span style="-webkit-text-stroke: 2px #000000; color: #ffffff"
+            >News</span
+          >
+        </h1>
+      </div>
+      <div class="search">
+        <input type="text" name="cn" id="cn" placeholder="Search" />
+        <button class="btn">Enter</button>
+      </div>
+    </nav>
+    <section>
+      <div class="scroll text4">
+        <div>
+          Attention!!<span>Get Updated - </span> Get Uptudate
+          <span>With Boost News - </span> We Show <span>Quick News - </span> For
+          <span>You - </span>
         </div>
-        <div class="search">
-            <input type="text" name="cn" id="cn" placeholder="Search">
-            <button class="btn">Enter</button>
+        <div>
+          Attention!!<span>Get Updated - </span> Get Uptudate
+          <span>With Boost News - </span> We Show <span>Quick News - </span> For
+          <span>You - </span>
         </div>
-     </nav>
-     <section>
-        <div class="scroll text4">
-          <div>
-            Most <span>Recent News - </span> Real <span>News - </span> Connect <span>With Us - </span> Aaj <span>Taak - </span>
-          </div>
-          <div>
-            Most <span>Recent News - </span> Real <span>News - </span> Connect <span>With Us - </span> Aaj <span>Taak - </span>
-          </div>
-        </div>
-      </section>
-    <section class="nav2">
-        <h3>Home</h3>
-        <h3>World News</h3>
-        <h3>National</h3>
-        <h3>Finansial</h3>
-        <h3>Entertainment</h3>
-        <h3>Technology</h3>
-        <h3>Sports</h3>
-    </section> 
-    <section class="popular_feed">
-
+      </div>
     </section>
-    <div class="card-wrapper">
-        {% for _ in range(18) %}
-        <div class="card">
-            <div class="title">
-            </div>
-            <div class="sett">
-              <p class="author"></p>
-              <p class="pub-time"></p>
-            </div>
-            <div class="imag">
-                <img id="img" src="" alt="Image Not Found">
-            </div>
-            <div class="des">
-            </div>
-            <div class="con">
-            </div>
-        </div>
-        {% endfor %}
+    <section class="nav2">
+      <h3>Home</h3>
+      <h3>World News</h3>
+      <h3>National</h3>
+      <h3>Finansial</h3>
+      <h3>Entertainment</h3>
+      <h3>Technology</h3>
+      <h3>Sports</h3>
+    </section>
+    <section class="popular_feed"></section>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-indicators"></div>
+      <div class="carousel-inner"></div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-</body>
+
+    <section id="hot">
+      <div class="left_card"></div>
+      <div class="right_card"></div>
+    </section>
+
+    <section id="breaking-news" class="headline">
+      <h1>Get Updated With Recent Breaking News</h1>
+      <h2>Everything in a Quick Shot</h2>
+    </section>
+
+    <div class="card-wrapper">
+      {% for _ in range(200) %}
+      <div class="card">
+        <div class="title"></div>
+        <div class="sett">
+          <p class="author"></p>
+          <p class="pub-time"></p>
+        </div>
+        <div class="imag">
+          <img id="img" src="" alt="Image Not Found" />
+        </div>
+        <div class="des"></div>
+        <div class="con"></div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <section id="sports-news" class="headline">
+      <h1>Sports News</h1>
+      <h2>All in one for you</h2>
+    </section>
+    <div class="card-wrapper sports-wrapper"></div>
+
+    <section id="bollywood-news" class="headline">
+      <h1>Bollywood News</h1>
+      <h2>All in one for you</h2>
+    </section>
+    <div class="card-wrapper bollywood-wrapper"></div>
+    <section id="hollywood-news" class="headline">
+      <h1>hollywood News</h1>
+      <h2>All in one for you</h2>
+    </section>
+    <div class="card-wrapper hollywood-wrapper"></div>
+
+    <section id="ai-news" class="headline">
+      <h1>AI News</h1>
+      <h2>All in one for you</h2>
+    </section>
+    <div class="card-wrapper ai-wrapper"></div>
+
+    <section id="politics-news" class="headline">
+      <h1>Politics News</h1>
+      <h2>All in one for you</h2>
+    </section>
+    <div class="card-wrapper politics-wrapper"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  </body>
 </html>

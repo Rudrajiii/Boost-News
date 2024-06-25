@@ -6,7 +6,10 @@ const countries = {
   china: "cn",
   russia: "ru"
 };
-const API_KEY = "f40c14ba5548450c8333597dade80555";
+const API_KEY1 = "f40c14ba5548450c8333597dade80555";
+const API_KEY2 = "1cc928358b8e4ee5a53e7a778d1900d6";
+const API_KEY3 = "1cc928358b8e4ee5a53e7a778d1900d6";
+
 let country;
 
 const cn = document.getElementById("cn");
@@ -39,12 +42,24 @@ btn.addEventListener("click", async (e) => {
       return;
     }
     e.preventDefault();
-    const url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY}`;
+    const url1 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY1}`;
+    const url2 = `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API_KEY2}`;
+    const url3 = `https://newsapi.org/v2/everything?q=apple&from=2024-06-24&to=2024-06-24&sortBy=popularity&apiKey=${API_KEY3}`;
 
-    let res = await fetch(url);
-    let data = await res.json();
 
-    const filteredData = await filterArticles(data); // Call filter function
+    let res1 = await fetch(url1);
+    let res2 = await fetch(url2);
+    let res3 = await fetch(url3);
+
+    let data1 = await res1.json();
+    let data2 = await res2.json();
+    let data3 = await res3.json();
+
+    const filteredData1 = await filterArticles(data1);
+    const filteredData2 = await filterArticles(data2);
+    const filteredData3 = await filterArticles(data3);
+
+    const filteredData = [...filteredData1, ...filteredData2 , ...filteredData3];
 
     console.log(filteredData);
 
@@ -57,6 +72,7 @@ btn.addEventListener("click", async (e) => {
       const pubTimeElement = item.querySelector(".pub-time");
 
       if (filteredData[i]) {
+        item.style.display = "block"; // Show card
         const author = filteredData[i]["author"];
         authorElement.textContent = author ? `Reporting - ${author}` : "Unknown Author";
 
@@ -74,6 +90,10 @@ btn.addEventListener("click", async (e) => {
           imageElement.src =
             "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg"; // Replace with a default image URL
         };
+        if(image === null){
+          imageElement.src =
+            "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg"; // Replace with a default image URL
+        }
         imageElement.src = image;
 
         let description = filteredData[i]["description"];
@@ -95,6 +115,7 @@ btn.addEventListener("click", async (e) => {
         const pubTime = filteredData[i]["publishedAt"];
         pubTimeElement.textContent = `Published on: ${formatDate(pubTime)}`;
       } else {
+        item.style.display = "none"; // Hide card
         console.log("Not enough articles for card", i + 1);
       }
     });
@@ -105,13 +126,21 @@ btn.addEventListener("click", async (e) => {
 
 async function getData() {
   try {
-    let res = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`
-    );
-    let data = await res.json();
-    console.log(data);
-    const filteredData = await filterArticles(data);
-    console.log(typeof filteredData);
+    let res1 = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY1}`);
+    let res2 = await fetch(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API_KEY2}`);
+    let res3 = await fetch(`https://newsapi.org/v2/everything?q=apple&from=2024-06-24&to=2024-06-24&sortBy=popularity&apiKey=${API_KEY3}`);
+
+    let data1 = await res1.json();
+    let data2 = await res2.json();
+    let data3 = await res3.json();
+
+    const filteredData1 = await filterArticles(data1);
+    const filteredData2 = await filterArticles(data2);
+    const filteredData3 = await filterArticles(data3);
+
+    const filteredData = [...filteredData1, ...filteredData2 , ...filteredData3];
+
+    console.log(filteredData);
 
     card.forEach((item, i) => {
       const titleElement = item.querySelector(".title");
@@ -122,6 +151,7 @@ async function getData() {
       const pubTimeElement = item.querySelector(".pub-time");
 
       if (filteredData[i]) {
+        item.style.display = "block"; // Show card
         const author = filteredData[i]["author"];
         authorElement.textContent = author ? `Reporting : ${author}` : "Unknown Author";
 
@@ -139,6 +169,10 @@ async function getData() {
           imageElement.src =
             "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg"; // Replace with a default image URL
         };
+        if(image === null){
+          imageElement.src =
+            "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg"; // Replace with a default image URL
+        }
         imageElement.src = image;
 
         let description = filteredData[i]["description"];
@@ -161,6 +195,7 @@ async function getData() {
         const pubTime = filteredData[i]["publishedAt"];
         pubTimeElement.textContent = `Published on: ${formatDate(pubTime)}`;
       } else {
+        item.style.display = "none"; // Hide card
         console.log("Not enough articles for card", i + 1);
       }
     });
@@ -172,3 +207,175 @@ async function getData() {
 getData().then((dat) => {
   console.log(dat);
 });
+
+
+const API_URLS = [
+  "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=1cc928358b8e4ee5a53e7a778d1900d6",
+  "https://newsapi.org/v2/everything?q=tesla&from=2024-05-25&sortBy=publishedAt&apiKey=1cc928358b8e4ee5a53e7a778d1900d6"
+];
+
+async function fetchNewsData() {
+  try {
+    const responses = await Promise.all(API_URLS.map(url => fetch(url)));
+    const data = await Promise.all(responses.map(response => response.json()));
+
+    // Flatten and filter articles with valid image URLs, correct extensions, and unique URLs
+    const articles = data.flatMap(d => d.articles).filter((article, index, self) => {
+      if (article.urlToImage && article.urlToImage !== "") {
+        // Check if the URL ends with a valid image extension and is not webp
+        const validExtensions = ['.jpg', '.jpeg', '.png'];
+        const lowerCaseUrl = article.urlToImage.toLowerCase();
+        const isUnique = self.findIndex(a => a.urlToImage === article.urlToImage) === index;
+        return isUnique && validExtensions.some(ext => lowerCaseUrl.includes(ext)) && !lowerCaseUrl.endsWith('.webp');
+      }
+      return false;
+    });
+
+    return articles;
+  } catch (error) {
+    console.error("Error fetching news data:", error);
+    return [];
+  }
+}
+
+function createCarouselItem(article, isActive) {
+  return `
+    <div class="carousel-item ${isActive ? 'active' : ''}">
+      <img class="bd-placeholder-img" width="100%" height="40%" src="${article.urlToImage}" alt="">
+      <div class="container">
+        <div class="carousel-caption ${isActive ? 'text-start' : 'text-end'}">
+          <h1>${article.title}</h1>
+          <p class="opacity-75">${article.author ? `Reporting - ${article.author}` : 'Unknown Author'}</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function createCarouselIndicator(index, isActive) {
+  return `
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="${index}" class="${isActive ? 'active' : ''}" aria-label="Slide ${index + 1}" ${isActive ? 'aria-current="true"' : ''}></button>
+  `;
+}
+
+async function updateCarousel() {
+  try {
+    const articles = await fetchNewsData();
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    const innerContainer = document.querySelector('.carousel-inner');
+
+    indicatorsContainer.innerHTML = articles.map((_, index) => createCarouselIndicator(index, index === 0)).join('');
+    innerContainer.innerHTML = articles.map((article, index) => createCarouselItem(article, index === 0)).join('');
+  } catch (error) {
+    console.error("Error updating carousel:", error);
+  }
+}
+
+updateCarousel();
+
+
+
+//New Headline handleing with logic
+const newAPIKey = "pub_422138deb15a27b19d88b3187c9b86529e8ca";
+const categories = ["sports", "bollywood","hollywood", "ai", "politics"];
+
+async function fetchCategoryNews(category) {
+    const url = `https://newsdata.io/api/1/news?apikey=${newAPIKey}&q=${category}`;
+    try {
+        let res = await fetch(url);
+        let data = await res.json();
+        return data.results;
+    } catch (error) {
+        console.error(`Error fetching ${category} news:`, error);
+        return [];
+    }
+}
+
+function createCard(article) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const titleElement = document.createElement('div');
+    titleElement.classList.add('title');
+    titleElement.textContent = article["title"];
+    card.appendChild(titleElement);
+
+    const settElement = document.createElement('div');
+    settElement.classList.add('sett');
+    const authorElement = document.createElement('p');
+    authorElement.classList.add('author');
+    authorElement.textContent = article["source_id"] ? `Source - ${article["source_id"]}` : "Unknown Source";
+    const pubTimeElement = document.createElement('p');
+    pubTimeElement.classList.add('pub-time');
+    pubTimeElement.textContent = `Published on: ${formatDate(article["pubDate"])}`;
+    settElement.appendChild(authorElement);
+    settElement.appendChild(pubTimeElement);
+    card.appendChild(settElement);
+
+    const imagElement = document.createElement('div');
+    imagElement.classList.add('imag');
+    const imageElement = document.createElement('img');
+    imageElement.id = 'img';
+    imageElement.onerror = () => {
+        console.warn("Image failed to load:", article["image_url"]);
+        imageElement.src = "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg";
+    };
+    if (article["image_url"] === null) {
+        imageElement.src = "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg";
+    } else {
+        imageElement.src = article["image_url"];
+    }
+    imagElement.appendChild(imageElement);
+    card.appendChild(imagElement);
+
+    const descriptionElement = document.createElement('div');
+    descriptionElement.classList.add('des');
+    if (article["description"]) {
+        if (article["description"].length > 300) {
+            const truncatedDescription = article["description"].substring(0, 300) + '... ';
+            descriptionElement.innerHTML = `${truncatedDescription}<a style="text-decoration:none" href="${article["link"]}" target="_blank">visit for more</a>`;
+        } else {
+            descriptionElement.textContent = article["description"];
+        }
+    } else {
+        descriptionElement.textContent = "Description not available.";
+    }
+    card.appendChild(descriptionElement);
+
+    const contentElement = document.createElement('div');
+    contentElement.classList.add('con');
+    if (article["content"] === "ONLY AVAILABLE IN PAID PLANS") {
+        contentElement.innerHTML = `<a style="text-decoration:none" href="${article["link"]}" target="_blank">For More Information Visit Here</a>`;
+    } else if (article["content"]) {
+        const updatedContent = article["content"].replace(/\[\+\d+ chars\]$/, `... <a style="text-decoration:none" href="${article["link"]}" target="_blank">CLICK HERE FOR MORE</a>`);
+        contentElement.innerHTML = updatedContent;
+    } else {
+        contentElement.innerHTML = `<a style="text-decoration:none" href="${article["link"]}" target="_blank">For More Information Visit Here</a>`;
+    }
+    card.appendChild(contentElement);
+
+    return card;
+}
+
+async function updateCategoryNews() {
+    for (const category of categories) {
+        const articles = await fetchCategoryNews(category);
+        const wrapper = document.querySelector(`.${category}-wrapper`);
+        wrapper.innerHTML = ""; // Clear previous news articles
+        articles.forEach(article => {
+            const card = createCard(article);
+            wrapper.appendChild(card);
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", updateCategoryNews);
+
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+  const options = {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  };
+  return date.toLocaleDateString('en-US', options);
+}
