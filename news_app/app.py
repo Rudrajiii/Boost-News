@@ -1,5 +1,6 @@
 from flask import Flask, render_template , jsonify , request
-from eventregistry import EventRegistry, QueryArticlesIter
+from eventregistry import EventRegistry, QueryArticlesIter # type: ignore
+from secretapi import AI_API_NEWS_KEY
 app = Flask(__name__)
 
 @app.route('/' , methods=['GET'])
@@ -8,7 +9,7 @@ def index():
 
 @app.route('/articles')
 def get_articles():
-    er = EventRegistry(apiKey='e6384209-b7f6-4b81-bf2d-94d702bf596d')
+    er = EventRegistry(apiKey=AI_API_NEWS_KEY)
 
     query = {
         "$query": {

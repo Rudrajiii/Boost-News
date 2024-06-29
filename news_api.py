@@ -1,7 +1,7 @@
-from eventregistry import EventRegistry, QueryArticlesIter
+from eventregistry import EventRegistry, QueryArticlesIter # type: ignore
 import json
 
-er = EventRegistry(apiKey='e6384209-b7f6-4b81-bf2d-94d702bf596d')
+er = EventRegistry(apiKey='YOUR_API_KEY')
 
 query = {
     "$query": {

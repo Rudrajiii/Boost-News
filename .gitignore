@@ -1,3 +1,5 @@
 include
 Lib
 Scripts
+secretapi.py
+__pycache__

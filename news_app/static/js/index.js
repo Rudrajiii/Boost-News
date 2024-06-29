@@ -42,9 +42,20 @@ btn.addEventListener("click", async (e) => {
       return;
     }
     e.preventDefault();
+
+     // Get the current date and subtract one day
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 1); // Subtract one day
+
+    // Format the date to YYYY-MM-DD
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+    print(formattedDate)
     const url1 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY1}`;
     const url2 = `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API_KEY2}`;
-    const url3 = `https://newsapi.org/v2/everything?q=apple&from=2024-06-24&to=2024-06-24&sortBy=popularity&apiKey=${API_KEY3}`;
+    const url3 = `https://newsapi.org/v2/everything?q=apple&from=${formattedDate}&to=${formattedDate}&sortBy=popularity&apiKey=${API_KEY3}`;
 
 
     let res1 = await fetch(url1);
@@ -126,9 +137,21 @@ btn.addEventListener("click", async (e) => {
 
 async function getData() {
   try {
+
+    // Get the current date and subtract one day
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 1); // Subtract one day
+
+    // Format the date to YYYY-MM-DD
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+
+
     let res1 = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY1}`);
     let res2 = await fetch(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API_KEY2}`);
-    let res3 = await fetch(`https://newsapi.org/v2/everything?q=apple&from=2024-06-24&to=2024-06-24&sortBy=popularity&apiKey=${API_KEY3}`);
+    let res3 = await fetch(`https://newsapi.org/v2/everything?q=apple&from=${formattedDate}&to=${formattedDate}&sortBy=popularity&apiKey=${API_KEY3}`);
 
     let data1 = await res1.json();
     let data2 = await res2.json();
@@ -211,7 +234,7 @@ getData().then((dat) => {
 
 const API_URLS = [
   "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=1cc928358b8e4ee5a53e7a778d1900d6",
-  "https://newsapi.org/v2/everything?q=tesla&from=2024-05-25&sortBy=publishedAt&apiKey=1cc928358b8e4ee5a53e7a778d1900d6"
+  "https://newsapi.org/v2/everything?q=tesla&from=2024-05-29&sortBy=publishedAt&apiKey=1cc928358b8e4ee5a53e7a778d1900d6"
 ];
 
 async function fetchNewsData() {
