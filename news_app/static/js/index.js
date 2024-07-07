@@ -314,7 +314,7 @@ const newAPIKey = "pub_47313dd3bbf1cd0dea635abec80e56b594662";
 const newslogo = document.getElementById('newslogo');
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
-  newslogo.src = "https://github.com/Rudrajiii/Boost-News/blob/main/postman/newspaper-logo.png?raw=true";
+  newslogo.src = "https://github.com/Rudrajiii/Boost-News/blob/main/postman/image (1).png?raw=true";
 }
 const categories = ["sports", "bollywood","hollywood", "ai", "politics"];
 
