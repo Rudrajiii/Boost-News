@@ -4,6 +4,19 @@
   ],
   "hints": {
     "no-inline-styles": "off",
-    "button-type": "off"
+    "button-type": "off",
+    "axe/forms": "off",
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+      }
+    ],
+    "axe/keyboard": [
+      "default",
+      {
+        "nested-interactive": "off"
+      }
+    ]
   }
 }

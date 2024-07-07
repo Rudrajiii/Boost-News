@@ -6,9 +6,9 @@ const countries = {
   china: "cn",
   russia: "ru"
 };
-// const API_KEY1 = "f40c14ba5548450c8333597dade80555";
-// const API_KEY2 = "f40c14ba5548450c8333597dade80555";
-// const API_KEY3 = "f40c14ba5548450c8333597dade80555";
+const API_KEY1 = "f40c14ba5548450c8333597dade80555";
+const API_KEY2 = "f40c14ba5548450c8333597dade80555";
+const API_KEY3 = "f40c14ba5548450c8333597dade80555";
 
 
 let country;
@@ -310,7 +310,9 @@ updateCarousel();
 
 
 //New Headline handleing with logic
+//Backup api key = pub_48120bf874f03619430ecf1008aafce930153 -> fresh hai ekdam
 const newAPIKey = "pub_47313dd3bbf1cd0dea635abec80e56b594662";
+// const newAPIKey = "pub_48118876f06065641b34ccaca72c0c3a9994f"; -> ye bhi backup hai 
 const newslogo = document.getElementById('newslogo');
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');

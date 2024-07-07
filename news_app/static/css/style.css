@@ -243,7 +243,7 @@ body.dark-mode {
   color: #e0e0e0;
 }
 .dark-mode .card-wrapper,
-.dark-mode #breaking-news,
+.dark-mode .headline,
 .dark-mode #hot
 {
   background: #212529;
@@ -251,6 +251,56 @@ body.dark-mode {
 .dark-mode #webkit{
   -webkit-text-stroke: 1px #ffffff !important;
   color: #212529 !important;
+}
+.dark-mode .mg{
+  background: #212529;
+  -webkit-text-stroke: 1px #ffffff !important;
+}
+.TM{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 999;
+}
+.switch {
+  display: inline-block;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  padding: 3px;
+  border-radius: 15px;
+  border: 2px solid #000000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.switch label::after {
+  content: "";
+  display: inherit;
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  background: #000000;
+  transition: 0.3s;
+}
+
+.switch input:checked ~ label {
+  border-color: #ffffff;
+}
+
+.switch input:checked ~ label::after {
+  translate: 30px 0;
+  background: #ffffff;
+}
+.dark-mode nav{
+  border-bottom: 0.5px solid #fbfbfb;
 }
 .dark-mode .card,
 .dark-mode .nav2
