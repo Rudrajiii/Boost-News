@@ -232,9 +232,16 @@ getData().then((dat) => {
 });
 
 
+const currentDate = new Date();
+currentDate.setDate(currentDate.getDate() - 1);
+const year = currentDate.getFullYear();
+const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+const day = String(currentDate.getDate()).padStart(2, '0');
+const formattedDate = `${year}-${month}-${day}`;
+
 const API_URLS = [
+  `https://newsapi.org/v2/everything?q=tesla&from=${formattedDate}&sortBy=publishedAt&apiKey=1cc928358b8e4ee5a53e7a778d1900d6`,
   "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=1cc928358b8e4ee5a53e7a778d1900d6",
-  "https://newsapi.org/v2/everything?q=tesla&from=2024-05-29&sortBy=publishedAt&apiKey=1cc928358b8e4ee5a53e7a778d1900d6"
 ];
 
 async function fetchNewsData() {
@@ -303,93 +310,130 @@ const newAPIKey = "pub_422138deb15a27b19d88b3187c9b86529e8ca";
 const categories = ["sports", "bollywood","hollywood", "ai", "politics"];
 
 async function fetchCategoryNews(category) {
-    const url = `https://newsdata.io/api/1/news?apikey=${newAPIKey}&q=${category}`;
-    try {
-        let res = await fetch(url);
-        let data = await res.json();
-        return data.results;
-    } catch (error) {
-        console.error(`Error fetching ${category} news:`, error);
-        return [];
-    }
+  if (category === 'ai') {
+      const aiNews = await fetchAINews();
+      const aiNewsFromAPI = await fetchAINewsFromAPI();
+      return [...aiNews, ...aiNewsFromAPI];
+  }
+  const url = `https://newsdata.io/api/1/news?apikey=${newAPIKey}&q=${category}`;
+  try {
+      let res = await fetch(url);
+      let data = await res.json();
+      return data.results;
+  } catch (error) {
+      console.error(`Error fetching ${category} news:`, error);
+      return [];
+  }
 }
+
+async function fetchAINews() {
+  try {
+      let res = await fetch('/articles');
+      let data = await res.json();
+      return data;
+  } catch (error) {
+      console.error('Error fetching AI news:', error);
+      return [];
+  }
+}
+
+async function fetchAINewsFromAPI() {
+  const url = `https://newsdata.io/api/1/news?apikey=${newAPIKey}&q=ai`;
+  try {
+      let res = await fetch(url);
+      let data = await res.json();
+      return data.results;
+  } catch (error) {
+      console.error('Error fetching AI news from API:', error);
+      return [];
+  }
+}
+
 
 function createCard(article) {
-    const card = document.createElement('div');
-    card.classList.add('card');
+  const card = document.createElement('div');
+  card.classList.add('card');
 
-    const titleElement = document.createElement('div');
-    titleElement.classList.add('title');
-    titleElement.textContent = article["title"];
-    card.appendChild(titleElement);
+  const titleElement = document.createElement('div');
+  titleElement.classList.add('title');
+  titleElement.textContent = article["title"];
+  card.appendChild(titleElement);
 
-    const settElement = document.createElement('div');
-    settElement.classList.add('sett');
-    const authorElement = document.createElement('p');
-    authorElement.classList.add('author');
-    authorElement.textContent = article["source_id"] ? `Source - ${article["source_id"]}` : "Unknown Source";
-    const pubTimeElement = document.createElement('p');
-    pubTimeElement.classList.add('pub-time');
-    pubTimeElement.textContent = `Published on: ${formatDate(article["pubDate"])}`;
-    settElement.appendChild(authorElement);
-    settElement.appendChild(pubTimeElement);
-    card.appendChild(settElement);
+  const settElement = document.createElement('div');
+  settElement.classList.add('sett');
+  const authorElement = document.createElement('p');
+  authorElement.classList.add('author');
+  authorElement.textContent = article["source_id"] ? `Source - ${article["source_id"]}` : "Unknown Source";
+  const pubTimeElement = document.createElement('p');
+  pubTimeElement.classList.add('pub-time');
+  pubTimeElement.textContent = `Published on: ${formatDate(article["pubDate"])}`;
+  settElement.appendChild(authorElement);
+  settElement.appendChild(pubTimeElement);
+  card.appendChild(settElement);
 
-    const imagElement = document.createElement('div');
-    imagElement.classList.add('imag');
-    const imageElement = document.createElement('img');
-    imageElement.id = 'img';
-    imageElement.onerror = () => {
-        console.warn("Image failed to load:", article["image_url"]);
-        imageElement.src = "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg";
-    };
-    if (article["image_url"] === null) {
-        imageElement.src = "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg";
-    } else {
-        imageElement.src = article["image_url"];
-    }
-    imagElement.appendChild(imageElement);
-    card.appendChild(imagElement);
+  const imagElement = document.createElement('div');
+  imagElement.classList.add('imag');
+  const imageElement = document.createElement('img');
+  imageElement.id = 'img';
+  imageElement.onerror = () => {
+      console.warn("Image failed to load:", article["image_url"] || article["image"]);
+      imageElement.src = "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg";
+  };
+  const imageUrl = article["image_url"] || article["image"];
+  if (!imageUrl) {
+      imageElement.src = "https://ih0.redbubble.net/image.195569273.8857/stf,small,600x600.jpg";
+  } else {
+      imageElement.src = imageUrl;
+  }
+  imagElement.appendChild(imageElement);
+  card.appendChild(imagElement);
 
-    const descriptionElement = document.createElement('div');
-    descriptionElement.classList.add('des');
-    if (article["description"]) {
-        if (article["description"].length > 300) {
-            const truncatedDescription = article["description"].substring(0, 300) + '... ';
-            descriptionElement.innerHTML = `${truncatedDescription}<a style="text-decoration:none" href="${article["link"]}" target="_blank">visit for more</a>`;
-        } else {
-            descriptionElement.textContent = article["description"];
-        }
-    } else {
-        descriptionElement.textContent = "Description not available.";
-    }
-    card.appendChild(descriptionElement);
+  const descriptionElement = document.createElement('div');
+  descriptionElement.classList.add('des');
+  if (article["description"]) {
+      if (article["description"].length > 300) {
+          const truncatedDescription = article["description"].substring(0, 300) + '... ';
+          descriptionElement.innerHTML = `${truncatedDescription}<a style="text-decoration:none" href="${article["link"]}" target="_blank">visit for more</a>`;
+      } else {
+          descriptionElement.textContent = article["description"];
+      }
+  } else {
+      descriptionElement.textContent = "Description not available.";
+  }
+  card.appendChild(descriptionElement);
 
-    const contentElement = document.createElement('div');
-    contentElement.classList.add('con');
-    if (article["content"] === "ONLY AVAILABLE IN PAID PLANS") {
-        contentElement.innerHTML = `<a style="text-decoration:none" href="${article["link"]}" target="_blank">For More Information Visit Here</a>`;
-    } else if (article["content"]) {
-        const updatedContent = article["content"].replace(/\[\+\d+ chars\]$/, `... <a style="text-decoration:none" href="${article["link"]}" target="_blank">CLICK HERE FOR MORE</a>`);
-        contentElement.innerHTML = updatedContent;
-    } else {
-        contentElement.innerHTML = `<a style="text-decoration:none" href="${article["link"]}" target="_blank">For More Information Visit Here</a>`;
-    }
-    card.appendChild(contentElement);
+  const contentElement = document.createElement('div');
+  contentElement.classList.add('con');
+  if (article["content"] === "ONLY AVAILABLE IN PAID PLANS") {
+      contentElement.innerHTML = `<a style="text-decoration:none" href="${article["link"]}" target="_blank">For More Information Visit Here</a>`;
+  } else if (article["content"]) {
+      const updatedContent = article["content"].replace(/\[\+\d+ chars\]$/, `... <a style="text-decoration:none" href="${article["link"]}" target="_blank">CLICK HERE FOR MORE</a>`);
+      contentElement.innerHTML = updatedContent;
+  } else {
+      contentElement.innerHTML = `<a style="text-decoration:none" href="${article["link"]}" target="_blank">For More Information Visit Here</a>`;
+  }
+  card.appendChild(contentElement);
 
-    return card;
+  return card;
 }
 
+
 async function updateCategoryNews() {
-    for (const category of categories) {
-        const articles = await fetchCategoryNews(category);
-        const wrapper = document.querySelector(`.${category}-wrapper`);
-        wrapper.innerHTML = ""; // Clear previous news articles
-        articles.forEach(article => {
-            const card = createCard(article);
-            wrapper.appendChild(card);
-        });
-    }
+  for (const category of categories) {
+      const articles = await fetchCategoryNews(category);
+      const wrapper = document.querySelector(`.${category}-wrapper`);
+      wrapper.innerHTML = ""; // Clear previous news articles
+
+      const seenArticles = new Set();
+      articles.forEach(article => {
+        const uniqueKey = `${article["title"]}-${article["image_url"] || article["image"]}-${article["link"]}-${article["description"]}`;
+          if (!seenArticles.has(uniqueKey)) {
+              seenArticles.add(uniqueKey);
+              const card = createCard(article);
+              wrapper.appendChild(card);
+          }
+      });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", updateCategoryNews);
