@@ -42,18 +42,19 @@
             font-family: 'Merriweather';
             font-weight: 900;
             font-size: 3.2rem;
+            margin-left: -7rem;
           "
         >
           Boost
-          <span style="-webkit-text-stroke: 2px #000000; color: #ffffff"
+          <span id="webkit" style="-webkit-text-stroke: 1px #2b2727; color: #ffffff"
             >News</span
           >
         </h1>
       </div>
-      <div class="search">
-        <input type="text" name="cn" id="cn" placeholder="Search" />
-        <button class="btn">Enter</button>
-      </div>
+      <form class="d-flex search" role="search">
+        <input class="form-control me-2" id="cn" name="cn" type="hidden" placeholder="Search" aria-label="Search">
+        <button style="display: none;" class="btn btn-outline-success">Search</button>
+      </form>
     </nav>
     <section>
       <div class="scroll text4">
@@ -70,15 +71,46 @@
       </div>
     </section>
     <section class="nav2">
-      <h3>Home</h3>
-      <h3>World News</h3>
-      <h3>National</h3>
-      <h3>Finansial</h3>
-      <h3>Entertainment</h3>
-      <h3>Technology</h3>
-      <h3>Sports</h3>
+      <a  style="text-decoration: none !important;"  href="#home"><h3 style="   background: rgb(242, 167, 167);">Home</h3></a>
+      <a  style="text-decoration: none !important;"  href="#breaking-news"><h3 style="   background: rgb(251, 183, 128);">World News</h3></a>
+      <a  style="text-decoration: none !important;"  href="#breaking-news"><h3 style="   background: rgb(255, 236, 131);">National</h3></a>
+      <a  style="text-decoration: none !important;"  href="#politics-news"><h3 style="   background: rgb(191, 246, 139);">Politics</h3></a>
+      <a  style="text-decoration: none !important;"   href="#bollywood-news"><h3 style="   background: rgb(167, 242, 211);">Entertainment</h3></a>
+      <a  style="text-decoration: none !important;"  href="#ai-news"><h3 style="   background: rgb(179, 227, 236);">Technology</h3></a>
+      <a  style="text-decoration: none !important;"  href="#sports-news"><h3 style="   background: rgb(187, 167, 242);">Sports</h3></a>
     </section>
-    <section class="popular_feed"></section>
+    <button class="btn btn-dark-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      <header id="album" data-bs-theme="dark">
+  <div class="text-bg-dark collapse" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>About</h4>
+          <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+            <li><a href="#" class="text-white">Like on Facebook</a></li>
+            <li><a href="#" class="text-white">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <strong>Album</strong>
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
       <div class="carousel-indicators"></div>
       <div class="carousel-inner"></div>

@@ -6,15 +6,19 @@ const countries = {
   china: "cn",
   russia: "ru"
 };
-const API_KEY1 = "f40c14ba5548450c8333597dade80555";
-const API_KEY2 = "1cc928358b8e4ee5a53e7a778d1900d6";
-const API_KEY3 = "1cc928358b8e4ee5a53e7a778d1900d6";
+// const API_KEY1 = "f40c14ba5548450c8333597dade80555";
+// const API_KEY2 = "f40c14ba5548450c8333597dade80555";
+// const API_KEY3 = "f40c14ba5548450c8333597dade80555";
+
 
 let country;
 
 const cn = document.getElementById("cn");
 const btn = document.querySelector(".btn");
 const card = document.querySelectorAll(".card");
+
+
+
 
 async function filterArticles(data) {
   // Filter articles with valid image URLs
@@ -52,7 +56,7 @@ btn.addEventListener("click", async (e) => {
     const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
     const day = String(currentDate.getDate()).padStart(2, '0');
     const formattedDate = `${year}-${month}-${day}`;
-    print(formattedDate)
+    console.log(formattedDate)
     const url1 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY1}`;
     const url2 = `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API_KEY2}`;
     const url3 = `https://newsapi.org/v2/everything?q=apple&from=${formattedDate}&to=${formattedDate}&sortBy=popularity&apiKey=${API_KEY3}`;
@@ -306,7 +310,12 @@ updateCarousel();
 
 
 //New Headline handleing with logic
-const newAPIKey = "pub_422138deb15a27b19d88b3187c9b86529e8ca";
+const newAPIKey = "pub_47313dd3bbf1cd0dea635abec80e56b594662";
+const newslogo = document.getElementById('newslogo');
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  newslogo.src = "../postman/newspaper-logo.png";
+}
 const categories = ["sports", "bollywood","hollywood", "ai", "politics"];
 
 async function fetchCategoryNews(category) {
@@ -329,7 +338,7 @@ async function fetchCategoryNews(category) {
 async function fetchAINews() {
   try {
       let res = await fetch('/articles');
-      let data = await res.json();
+      let data = await res.json(); 
       return data;
   } catch (error) {
       console.error('Error fetching AI news:', error);

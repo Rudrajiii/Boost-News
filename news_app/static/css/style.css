@@ -77,7 +77,7 @@ html , body{
 nav{
     width: 100%;
     height: 15vh;
-    /* background: yellow; */
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -183,20 +183,23 @@ section {
 .nav2{
     width: 100%;
     display: flex;
-    border-top: 2px solid gray;
-    border-bottom: 2px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
     height: 10vh;
     align-items: center;
     justify-content: space-evenly;
+    
     & h3{
         font-size: 1.2rem !important;
+        padding: .8rem;
+        border-radius: .4rem;
+        color: black;
+        
     }
 }
-
-
 .popular_feed{
     width: 100%;
-    min-height: 15vh;
+    min-height: 35vh;
     background: whitesmoke;
 }
 .headline{
@@ -233,4 +236,52 @@ section {
     width: 100%;
     min-height: 100% !important;
   }
+}
+
+body.dark-mode {
+  background-color: #212529;
+  color: #e0e0e0;
+}
+.dark-mode .card-wrapper,
+.dark-mode #breaking-news,
+.dark-mode #hot
+{
+  background: #212529;
+}
+.dark-mode #webkit{
+  -webkit-text-stroke: 1px #ffffff !important;
+  color: #212529 !important;
+}
+.dark-mode .card,
+.dark-mode .nav2
+{
+  background: #2B3035;
+}
+.dark-mode .navbar,
+.dark-mode .navbar-brand,
+.dark-mode .navbar-toggler
+{
+  background-color: #1f1f1f;
+  color: #fbfbfb;
+}
+.dark-mode .card {
+  background-color: #2B3035;
+  color: #e0e0e0;
+}
+.dark-mode .logo{
+  mix-blend-mode:difference !important;
+  background: transparent !important;
+
+}
+.dark-mode a {
+  color: #bb86fc;
+}
+.dark-mode h3 {
+  background-color: #333;
+  color: #060000;
+}
+.dark-mode .btn-dark-mode {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #e0e0e0;
 }
