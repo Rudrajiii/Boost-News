@@ -35,7 +35,7 @@ def get_articles():
 
     articles = []
 
-    for article in q.execQuery(er, maxItems=30):  # Fetch up to 10 articles
+    for article in q.execQuery(er, maxItems=30):  # Fetch up to 30 articles
         article_data = {
             "title": article.get('title', 'No Title'),
             "image": article.get('image'),
