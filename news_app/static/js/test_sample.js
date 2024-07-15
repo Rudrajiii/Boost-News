@@ -31,3 +31,4 @@ console.log(typeof article);
 
 const filteredObject = article.find(obj => obj.urlToImage != null);
 console.log(filteredObject);
+
