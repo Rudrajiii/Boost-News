@@ -1,60 +1,94 @@
 import requests
 from bs4 import BeautifulSoup
 
-# Define the URL of The Hindu's main page
-url = 'https://www.thehindu.com/'
-response = requests.get(url)
+def fetch_page(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return BeautifulSoup(response.content, 'html.parser')
+    else:
+        print(f'Failed to retrieve the webpage. Status code: {response.status_code}')
+        return None
 
-if response.status_code == 200:
-    # Parse the HTML content using BeautifulSoup
-    soup = BeautifulSoup(response.content, 'html.parser')
+def extract_text(tag, selector, default=''):
+    element = tag.find(selector) if tag else None
+    return element.get_text(strip=True) if element else default
+
+def extract_attribute(tag, selector, attribute, default=''):
+    element = tag.find(selector) if tag else None
+    return element.get(attribute, default) if element else default
+
+def main():
+    url = 'https://www.thehindu.com/'
+    soup = fetch_page(url)
+    if not soup:
+        return
     
-    # Find the main article section
-    article_section = soup.find('div', class_='element bigger main-element pt-0')
-    smaller_article_section = soup.find('div' , class_='smaller')
+    # Extract smaller article section
+    smaller_article_section = soup.find('div', class_='smaller')
     if smaller_article_section:
-        main_title = smaller_article_section.find('h3' , class_='title')
+        main_title = smaller_article_section.find('h3', class_='title')
         if main_title:
-            link_tag = main_title.find('a')
-            strong_tag = main_title.find('strong')
-            get_main_title_text = main_title.get_text(strip=True)
-            print(f'Rudra"s heading {get_main_title_text}')
-            if strong_tag:
-                text = strong_tag.get_text(strip=True)
-                print(f'Strong tag text => {text}')
-            if link_tag:
-            # Print the href attribute and text of the anchor tag
-                print(f'Link: {link_tag["href"]}, Text: {link_tag.get_text(strip=True)}')
+            link = extract_attribute(main_title, 'a', 'href')
+            strong_text = extract_text(main_title, 'strong')
+            main_title_text = main_title.get_text(strip=True)
+            print(f'Rudra\'s heading: {main_title_text}')
+            if strong_text:
+                print(f'Strong tag text => {strong_text}')
+            if link:
+                print(f'Link: {link}, Text: {main_title.get_text(strip=True)}')
     
+    # Extract main article section
+    article_section = soup.find('div', class_='element bigger main-element pt-0')
     if article_section:
-        # Extract the main heading
-        main_heading_tag = article_section.find('h1', class_='title')
-        if main_heading_tag:
-            main_heading = main_heading_tag.get_text(strip=True)
+        main_heading = extract_text(article_section, 'h1.title')
+        sub_heading = extract_text(article_section, 'div.sub-text')
+        author_name = extract_text(article_section, 'div.author-name')
+        image_url = extract_attribute(article_section.find('div', class_='picture'), 'img', 'data-original', extract_attribute(article_section.find('div', class_='picture'), 'img', 'src'))
+
+        if image_url:
+            image_url = image_url.replace('SQUARE_80', 'SQUARE_960')
+
+        if main_heading:
             print(f'Main Heading: {main_heading}')
-        
-        # Extract the sub-heading
-        sub_heading_tag = article_section.find('div', class_='sub-text')
-        if sub_heading_tag:
-            sub_heading = sub_heading_tag.get_text(strip=True)
+        if sub_heading:
             print(f'Sub-Heading: {sub_heading}')
-        
-        # Extract the author name
-        author_tag = article_section.find('div', class_='author-name')
-        if author_tag:
-            author_name = author_tag.get_text(strip=True)
+        if author_name:
             print(f'Author Name: {author_name}')
-        
-        # Extract the image URL
-        image_tag = article_section.find('div', class_='picture').find('img')
-        if image_tag:
-            image_url = image_tag.get('data-original', image_tag.get('src'))
-            clear_n_big_img_url = image_url.replace('SQUARE_80' , 'SQUARE_960')
-            print(f'Image URL: {clear_n_big_img_url}')
+        if image_url:
+            print(f'Image URL: {image_url}')
     else:
         print('No main article section found.')
-else:
-    print(f'Failed to retrieve the webpage. Status code: {response.status_code}')
+
+def sub_main():
+    url = "https://www.thehindu.com/sci-tech/technology/"
+    soup = fetch_page(url)
+    if not soup:
+        return
+    tech = soup.find('div' , class_='element main-row-element')
+    if tech:
+        # print(tech.prettify())
+        title = tech.find('h3' , class_='title')
+        link_txt = title.find('a').get_text()
+        print(f'Tech Text : {link_txt}')
+    if tech:
+        a = tech.find('div' , class_='right-content')
+        l = a.find('a')
+        d = l.find('div' , class_='picture')
+        img = extract_attribute(d,'img', 'data-original')
+        big_img = img.replace('SQUARE_80' , 'SQUARE_960')
+        print(big_img)
+    else:
+        print('No tech')
+
+    
+
+if __name__ == '__main__':
+    main()
+    print('-----------------')
+    sub_main()
+
+
+
 
 
 # "https://th-i.thgim.com/public/incoming/9ytfn5/article68386671.ece/alternates/SQUARE_100/20240710001L.jpg"
