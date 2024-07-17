@@ -244,19 +244,23 @@ const day = String(currentDate.getDate()).padStart(2, '0');
 const formattedDate = `${year}-${month}-${day}`;
 
 const API_URLS = [
-  // `https://newsapi.org/v2/everything?q=tesla&from=${formattedDate}&sortBy=publishedAt&apiKey=1cc928358b8e4ee5a53e7a778d1900d6`,
-  // "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=1cc928358b8e4ee5a53e7a778d1900d6",
+  "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=1cc928358b8e4ee5a53e7a778d1900d6",
+  'https://newsapi.org/v2/everything?q=tesla&from=${formattedDate}&sortBy=publishedAt&apiKey=1cc928358b8e4ee5a53e7a778d1900d6'
 ];
 
 async function fetchNewsData() {
   try {
     const responses = await Promise.all(API_URLS.map(url => fetch(url)));
-    const data = await Promise.all(responses.map(response => response.json()));
+    const data = await Promise.all(responses.map(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    }));
 
     // Flatten and filter articles with valid image URLs, correct extensions, and unique URLs
     const articles = data.flatMap(d => d.articles).filter((article, index, self) => {
       if (article.urlToImage && article.urlToImage !== "") {
-        // Check if the URL ends with a valid image extension and is not webp
         const validExtensions = ['.jpg', '.jpeg', '.png'];
         const lowerCaseUrl = article.urlToImage.toLowerCase();
         const isUnique = self.findIndex(a => a.urlToImage === article.urlToImage) === index;
@@ -309,6 +313,7 @@ updateCarousel();
 
 
 
+
 //New Headline handleing with logic
 //Backup api key = pub_48120bf874f03619430ecf1008aafce930153 -> fresh hai ekdam
 // const newAPIKey = "pub_47313dd3bbf1cd0dea635abec80e56b594662";
@@ -337,16 +342,16 @@ async function fetchCategoryNews(category) {
   }
 }
 
-async function fetchAINews() {
-  try {
-      let res = await fetch('/articles');
-      let data = await res.json(); 
-      return data;
-  } catch (error) {
-      console.error('Error fetching AI news:', error);
-      return [];
-  }
-}
+// async function fetchAINews() {
+//   try {
+//       let res = await fetch('/articles');
+//       let data = await res.json();  
+//       return data;
+//   } catch (error) {
+//       console.error('Error fetching AI news:', error);
+//       return [];
+//   }
+// }
 
 async function fetchAINewsFromAPI() {
   const url = `https://newsdata.io/api/1/news?apikey=${newAPIKey}&q=ai`;

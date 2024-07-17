@@ -1,0 +1,103 @@
+#head-layout {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+#head-layout .trending {
+  font-weight: bold;
+}
+#head-layout .trending-description {
+  font-size: 14px;
+}
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 110px;
+  gap: 20px;
+  min-height: 100vh;
+}
+.news-container .main-story {
+  flex: 2;
+  position: relative;
+}
+.news-container .main-story img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.4rem;
+}
+.news-container .main-story .story-content {
+  position: absolute;
+  border-radius: 0.4rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.news-container .main-story .story-content .category {
+  background-color: #e74c3c;
+  padding: 5px;
+  align-self: flex-start;
+}
+.news-container .main-story .story-content h2 {
+  margin: 10px 0;
+  font-size: 1.5em;
+}
+.news-container .main-story .story-content p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 0;
+}
+.news-container .side-stories {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.news-container .side-stories .side-story {
+  position: relative;
+}
+.news-container .side-stories .side-story img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.4rem;
+}
+.news-container .side-stories .side-story .story-content {
+  border-radius: 0.4rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.news-container .side-stories .side-story .story-content .category {
+  background-color: #e74c3c;
+  padding: 5px;
+  align-self: flex-start;
+}
+.news-container .side-stories .side-story .story-content h3 {
+  margin: 5px 0;
+  font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .news-container {
+    flex-direction: column;
+  }
+  .news-container .main-story, .news-container .side-stories {
+    flex: 1;
+  }
+}/*# sourceMappingURL=layout.css.map */
