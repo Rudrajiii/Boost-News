@@ -1,0 +1,20 @@
+{
+    "main_data": {
+        "smaller_article": {
+            "heading": "Reliance Industries Q1 net profit declines 4% to \u20b917,448 crore on higher depreciation",
+            "strong_text": "",
+            "link": "https://www.thehindu.com/business/Industry/ril-q1-pat-declines-4-to-17448-crore-on-higher-depreciation/article68422969.ece"
+        },
+        "main_article": {
+            "label": "Technology\n",
+            "main_heading": "\nMicrosoft outage: Software bug disrupts aviation in India, several sectors globally\n",
+            "sub_heading": "Faulty update knocks out several Windows computers and servers around the world; IndiGo has cancelled at least 283 trips, and airports around the country saw delays and crowding",
+            "author_name": "",
+            "image_url": "https://th-i.thgim.com/public/news/67b0an/article68423487.ece/alternates/SQUARE_960/1693_19_7_2024_19_22_53_1_IMG_20240719_185719.JPG"
+        }
+    },
+    "tech_data": {
+        "tech_text": "\nMicrosoft Outage Live Updates | Mumbai, Delhi flight operations affected\n",
+        "tech_image": "https://th-i.thgim.com/public/incoming/ai4kcw/article68421987.ece/alternates/SQUARE_960/2024-07-19T111218Z_1973790202_RC2AY8AUZJ6V_RTRMADP_3_CYBER-OUTAGES.JPG"
+    }
+}

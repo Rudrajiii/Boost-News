@@ -21,6 +21,7 @@
 .news-container .main-story {
   flex: 2;
   position: relative;
+  min-height: inherit;
 }
 .news-container .main-story img {
   width: 100%;

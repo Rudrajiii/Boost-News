@@ -14,12 +14,12 @@
     display: flex;
     flex-wrap: wrap;
     padding: 20px 110px;
-    
     gap: 20px;
     min-height: 100vh;
     .main-story {
         flex: 2;
         position: relative;
+        min-height: inherit;
         img {
             width: 100%;
             height: 100%;
