@@ -46,7 +46,7 @@ def main():
         label = article_section.find('div' , class_='label')
         main_heading = article_section.find('h1', class_='title')
         sub_heading = article_section.find('div', 'sub-text')
-        author_name = extract_text(article_section, 'div.author-name')
+        author_name = article_section.find('div', class_='by-line').find('div' , class_='author-name').find('a' , class_="person-name lnk")
         image_url = extract_attribute(article_section.find('div', class_='picture'), 'img', 'data-original', extract_attribute(article_section.find('div', class_='picture'), 'img', 'src'))
 
         if image_url:
@@ -56,7 +56,7 @@ def main():
             'label':label.get_text(),
             'main_heading': main_heading.get_text(),
             'sub_heading': sub_heading.get_text(),
-            'author_name': author_name,
+            'author_name': author_name.get_text(),
             'image_url': image_url
         }
     

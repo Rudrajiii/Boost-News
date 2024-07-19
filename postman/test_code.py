@@ -28,7 +28,7 @@ def main():
     if article_section:
         label = article_section.find('div' , class_='label')
         by_line = article_section.find('div', class_='by-line')
-        author_name = extract_text(by_line, 'div.author-name')
+        # author_name = extract_text(by_line, 'div.author-name')
         main_heading = extract_text(article_section, 'h1.title')
         sub_heading = extract_text(article_section, 'div.sub-text')
         author_name = extract_text(article_section, 'div.author-name')
@@ -38,8 +38,8 @@ def main():
             image_url = image_url.replace('SQUARE_80', 'SQUARE_960')
         if label :
             print(label.get_text())
-        if author_name:
-            print(author_name)
+        if by_line:
+            print(by_line.find('div' , class_='author-name').find('a' , class_="person-name lnk").get_text())
             # print(author_name.find('div' , class_='author-name'))
     
 main()
