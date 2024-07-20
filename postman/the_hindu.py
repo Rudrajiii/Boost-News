@@ -27,18 +27,31 @@ def main():
     data = {}
 
     # Extract smaller article section
-    smaller_article_section = soup.find('div', class_='smaller')
-    if smaller_article_section:
-        main_title = smaller_article_section.find('h3', class_='title')
-        if main_title:
-            link = extract_attribute(main_title, 'a', 'href')
-            strong_text = extract_text(main_title, 'strong')
-            main_title_text = main_title.get_text(strip=True)
-            data['smaller_article'] = {
-                'heading': main_title_text,
-                'strong_text': strong_text,
-                'link': link
-            }
+    premium_data = soup.find('div' , class_='reverse-column')
+    reverse_part = premium_data.find('div', class_='reverse-part')
+    elements = reverse_part.find_all('div', class_=['element with-writer', 'element with-writer no-border'])
+    premium_data_set = []
+    # Extract the necessary information from each element
+    for element in elements:
+        info = {}
+        
+        link_tag = element.find('a', href=True)
+        info['link'] = link_tag['href'] if link_tag else None
+        
+        img_tag = element.find('img', class_='media-object') or element.find('img', class_='lazy')
+        info['image'] = img_tag.get('data-original') or img_tag.get('data-src-template') if img_tag else None
+        
+        title_tag = element.find('h3', class_='title').find('a')
+        info['title'] = title_tag.text.strip() if title_tag else None
+        
+        author_tag = element.find('a', class_='person-name')
+        info['author'] = author_tag.text.strip() if author_tag else None
+    
+        
+        # Add the extracted information to the premium_data_set list
+        premium_data_set.append(info)
+    data['premium_articles_data'] = premium_data_set
+
 
     # Extract main article section
     article_section = soup.find('div', class_='element bigger main-element pt-0')
@@ -52,11 +65,16 @@ def main():
         if image_url:
             image_url = image_url.replace('SQUARE_80', 'SQUARE_960')
 
+        if not author_name:
+            author_name = 'No Author Name Found'
+        else:
+            author_name = author_name.get_text()
+
         data['main_article'] = {
             'label':label.get_text(),
             'main_heading': main_heading.get_text(),
             'sub_heading': sub_heading.get_text(),
-            'author_name': author_name.get_text(),
+            'author_name': author_name,
             'image_url': image_url
         }
     

@@ -1,20 +1,41 @@
 {
     "main_data": {
-        "smaller_article": {
-            "heading": "Reliance Industries Q1 net profit declines 4% to \u20b917,448 crore on higher depreciation",
-            "strong_text": "",
-            "link": "https://www.thehindu.com/business/Industry/ril-q1-pat-declines-4-to-17448-crore-on-higher-depreciation/article68422969.ece"
-        },
+        "premium_articles_data": [
+            {
+                "link": "https://www.thehindu.com/news/international/project-2025-what-is-the-conservative-roadmap-suggested-for-a-potential-second-trump-term/article68409709.ece",
+                "image": "https://th-i.thgim.com/public/incoming/8goy1n/article68405590.ece/alternates/SQUARE_80/AP07_15_2024_000010B.jpg",
+                "title": "What is Project 2025?: A conservative policy agenda for Trump 2.0",
+                "author": "Suchitra Karthikeyan"
+            },
+            {
+                "link": "https://www.thehindu.com/society/paris-olympics-2024-skateboarding-india-new-generation-athletes-infrastructure-finance-bengaluru-delhi/article68405860.ece",
+                "image": null,
+                "title": "Ahead of the Paris Olympics 2024, a look at India\u2019s skateboarding\u00a0journey so far",
+                "author": "Uthra Ganesan"
+            },
+            {
+                "link": "https://www.thehindu.com/news/cities/mumbai/mumbai-bmw-hit-and-run-kaveri-could-have-been-anyones-mother/article68417240.ece",
+                "image": null,
+                "title": "Mumbai BMW hit-and-run\u00a0| \u2018Kaveri could have been anyone\u2019s mother\u2019",
+                "author": "Purnima Sah"
+            },
+            {
+                "link": "https://www.thehindu.com/books/interview-author-prayaag-akbar-new-novel-mother-india-new-india-right-wing-nationalism-politics-economy-youth/article68409745.ece",
+                "image": "https://th-i.thgim.com/public/migration_catalog/article14036145.ece/alternates/SQUARE_80/radhika%202.jpg",
+                "title": "In conversation with author Prayaag Akbar on his new book \u2018Mother India\u2019",
+                "author": "Radhika Santhanam"
+            }
+        ],
         "main_article": {
-            "label": "Technology\n",
-            "main_heading": "\nMicrosoft outage: Software bug disrupts aviation in India, several sectors globally\n",
-            "sub_heading": "Faulty update knocks out several Windows computers and servers around the world; IndiGo has cancelled at least 283 trips, and airports around the country saw delays and crowding",
-            "author_name": "Aroon Deep",
-            "image_url": "https://th-i.thgim.com/public/news/67b0an/article68423487.ece/alternates/SQUARE_960/1693_19_7_2024_19_22_53_1_IMG_20240719_185719.JPG"
+            "label": "Health\n",
+            "main_heading": "\nNational Testing Agency announces centre and city-wise results of NEET-UG\n",
+            "sub_heading": "NEET-UG results, which were initially announced on June 5, have been published in this format following an order of the Supreme Court",
+            "author_name": "No Author Name Found",
+            "image_url": "https://th-i.thgim.com/public/incoming/dmff5c/article68425197.ece/alternates/SQUARE_960/PTI06_13_2024_000311B.jpg"
         }
     },
     "tech_data": {
-        "tech_text": "\nMicrosoft Outage Live Updates | Mumbai, Delhi flight operations affected\n",
-        "tech_image": "https://th-i.thgim.com/public/incoming/ai4kcw/article68421987.ece/alternates/SQUARE_960/2024-07-19T111218Z_1973790202_RC2AY8AUZJ6V_RTRMADP_3_CYBER-OUTAGES.JPG"
+        "tech_text": "\nMicrosoft CrowdStrike outage | How a software glitch disrupted global businesses\n",
+        "tech_image": "https://th-i.thgim.com/public/news/national/lc0r3y/article68423584.ece/alternates/SQUARE_960/KIA_Airport_05.jpg"
     }
 }
