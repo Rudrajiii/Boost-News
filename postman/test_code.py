@@ -2,88 +2,59 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-def fetch_page(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        return BeautifulSoup(response.content, 'html.parser')
+# Define the URL
+url = "https://www.ndtv.com/"
+
+# Send a GET request to the URL
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the HTML content
+    soup = BeautifulSoup(response.content, 'lxml')
+    a = soup.find('div' , class_='vjl-md-3 CrdSptrRt order-1')
+    print(a.find('img')['src'])
+    # Dictionary to hold the scraped data
+    data = {}
+    left_article = soup.find('div' , class_='vjl-row mb-25 top-scroll-17')
+    # print(left_article.prettify())
+    if left_article:
+        img_url = left_article.find('div' , class_='vjl-md-6 CrdSptrRt').find('div' , class_='crd-b crd-b_h-at res_crd-1 pb-0').find('div' , class_='crd_img').find('div' , class_='img-gr img-gr_f').find('a')
+    # Extracting the main article
+    main_article = soup.find('div', class_='vjl-md-6 CrdSptrRt')
+    if main_article:
+        main_article_title = main_article.find('h1', class_='crd_ttl7').get_text(strip=True)
+        main_article_link = main_article.find('a')['href']
+        main_article_image = main_article.find('img')['src']
+        
+        data['main_article'] = {
+            'title': main_article_title,
+            'link': main_article_link,
+            'image': main_article_image
+        }
     else:
-        print(f'Failed to retrieve the webpage. Status code: {response.status_code}')
-        return None
-
-def extract_text(tag, selector, default=''):
-    element = tag.find(selector) if tag else None
-    return element.get_text(strip=True) if element else default
-
-def extract_attribute(tag, selector, attribute, default=''):
-    element = tag.find(selector) if tag else None
-    return element.get(attribute, default) if element else default
-
-def main():
-    url = 'https://www.thehindu.com/'
-    soup = fetch_page(url)
-    if not soup:
-        return {}
+        data['main_article'] = None
     
-    article_section = soup.find('div', class_='element bigger main-element pt-0')
-    if article_section:
-        label = article_section.find('div' , class_='label')
-        # by_line = article_section.find('div', class_='by-line')
-        # author_name = extract_text(by_line, 'div.author-name')
-        main_heading = extract_text(article_section, 'h1.title')
-        sub_heading = extract_text(article_section, 'div.sub-text')
-        # author_name = extract_text(article_section, 'div.author-name')
-        image_url = extract_attribute(article_section.find('div', class_='picture'), 'img', 'data-original', extract_attribute(article_section.find('div', class_='picture'), 'img', 'src'))
-
-        if image_url:
-            image_url = image_url.replace('SQUARE_80', 'SQUARE_960')
-        if label :
-            print(label.get_text())
-        # if by_line:
-        #     print(by_line.find('div' , class_='author-name').find('a' , class_="person-name lnk").get_text())
-            # print(author_name.find('div' , class_='author-name'))
-    premium_data = soup.find('div' , class_='reverse-column')
-    # if premium_data:
-    #     print(premium_data.prettify())
-    # else:
-    #     print('Not Found')
-    # Find the parent div with class 'reverse-part'
-    reverse_part = premium_data.find('div', class_='reverse-part')
-
-    # Iterate through each child div with class 'element with-writer'
-    elements = reverse_part.find_all('div', class_='element with-writer')
-
-    # List to store the extracted information
-    data = []
-
-    # Extract the necessary information from each element
-    for element in elements:
-        info = {}
-        
-        # Extract the link
-        link_tag = element.find('a', href=True)
-        info['link'] = link_tag['href'] if link_tag else None
-        
-        # Extract the image
-        img_tag = element.find('img', class_='media-object')
-        info['image'] = img_tag['data-original'] if img_tag else None
-        
-        # Extract the title
-        title_tag = element.find('h3', class_='title').find('a')
-        info['title'] = title_tag.text.strip() if title_tag else None
-        
-        # Extract the author name
-        author_tag = element.find('a', class_='person-name')
-        info['author'] = author_tag.text.strip() if author_tag else None
-        
-        # Add the extracted information to the data list
-        data.append(info)
-
-        # Print the extracted information
-        for item in data:
-            print(f"Link: {item['link']}")
-            print(f"Image: {item['image']}")
-            print(f"Title: {item['title']}")
-            print(f"Author: {item['author']}")
-            print("---")
+    # Extracting the list items
+    list_items = soup.find_all('li', class_='LstWg1-li')
+    articles = []
     
-main()
+    for item in list_items:
+        title_tag = item.find('h3')
+        if title_tag:
+            title = title_tag.get_text(strip=True)
+            link = item.find('a')['href']
+            articles.append({
+                'title': title,
+                'link': link
+            })
+    
+    data['articles'] = articles
+
+    # Save the data to a JSON file
+    # with open('scrap_data.json', 'w') as json_file:
+    #     json.dump(data, json_file, indent=4)
+
+    print("Data has been saved to ndtv_news.json")
+else:
+    print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
