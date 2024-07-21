@@ -6,9 +6,9 @@ const countries = {
   china: "cn",
   russia: "ru"
 };
-const API_KEY1 = "f40c14ba5548450c8333597dade80555";
-const API_KEY2 = "f40c14ba5548450c8333597dade80555";
-const API_KEY3 = "f40c14ba5548450c8333597dade80555";
+const API_KEY1 = "1cc928358b8e4ee5a53e7a778d1900d6";
+const API_KEY2 = "1cc928358b8e4ee5a53e7a778d1900d6";
+const API_KEY3 = "1cc928358b8e4ee5a53e7a778d1900d6";
 
 
 let country;
@@ -49,7 +49,7 @@ btn.addEventListener("click", async (e) => {
 
      // Get the current date and subtract one day
     const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() - 1); // Subtract one day
+    currentDate.setDate(currentDate.getDate() - 2); // Subtract one day
 
     // Format the date to YYYY-MM-DD
     const year = currentDate.getFullYear();
@@ -144,7 +144,7 @@ async function getData() {
 
     // Get the current date and subtract one day
     const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() - 1); // Subtract one day
+    currentDate.setDate(currentDate.getDate() - 2); // Subtract one day
 
     // Format the date to YYYY-MM-DD
     const year = currentDate.getFullYear();

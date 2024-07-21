@@ -1,0 +1,41 @@
+{
+    "main_data": {
+        "premium_articles_data": [
+            {
+                "link": "https://www.thehindu.com/news/national/what-are-the-rules-for-ias-probationers-explained/article68427004.ece",
+                "image": "https://th-i.thgim.com/public/todays-paper/tp-national/l60cib/article68424285.ece/alternates/SQUARE_80/TH19-VIJAITA-UPGQKD3182M.3.jpg.jpg",
+                "title": "What are the rules for IAS probationers?",
+                "author": "Vijaita Singh"
+            },
+            {
+                "link": "https://www.thehindu.com/news/national/karnataka/will-local-job-quotas-pass-the-legal-test-explained/article68426980.ece",
+                "image": "https://th-i.thgim.com/public/migration_catalog/article13954189.ece/alternates/SQUARE_80/venkat",
+                "title": "Will local job quotas pass the legal test? | Explained",
+                "author": "K. Venkataramanan"
+            },
+            {
+                "link": "https://www.thehindu.com/education/what-is-the-gender-gap-in-education-explained/article68426990.ece",
+                "image": null,
+                "title": "What is the gender gap in education? | Explained",
+                "author": "Priscilla Jebaraj"
+            },
+            {
+                "link": "https://www.thehindu.com/news/international/paul-kagame-spring-of-the-patriarch/article68426973.ece",
+                "image": null,
+                "title": "Paul Kagame: Spring of the patriarch",
+                "author": "Priyali Prakash"
+            }
+        ],
+        "main_article": {
+            "label": "Live",
+            "main_heading": "\nBiden withdraws from presidential race LIVE: Kamala vows to unite Democratic Party and defeat Trump\n",
+            "sub_heading": "Joe Biden said he will remain as President until his term ends in January 2025 and will address the nation later this week",
+            "author_name": " The Hindu Bureau",
+            "image_url": "https://th-i.thgim.com/public/incoming/r28crx/article68430318.ece/alternates/SQUARE_960/2024-07-21T193626Z_1793388759_RC2VZ8AA5UFA_RTRMADP_3_USA-ELECTION-BIDEN.JPG"
+        }
+    },
+    "tech_data": {
+        "tech_text": "\nMicrosoft CrowdStrike outage | How a software glitch disrupted global businesses\n",
+        "tech_image": "https://th-i.thgim.com/public/news/national/lc0r3y/article68423584.ece/alternates/SQUARE_960/KIA_Airport_05.jpg"
+    }
+}

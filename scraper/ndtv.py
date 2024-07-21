@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-# Define the URL
 url = "https://www.ndtv.com/"
 
 # Send a GET request to the URL
@@ -40,10 +39,10 @@ def scrape_ndtv_section(url):
 
 # Check if the request was successful
 if response.status_code == 200:
-    # Parse the HTML content
+
     soup = BeautifulSoup(response.content, 'lxml')
 
-    # Dictionary to hold the scraped data
+
     data = {}
 
     # Extracting the main article
