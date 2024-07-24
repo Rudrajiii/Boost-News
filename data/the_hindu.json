@@ -2,40 +2,40 @@
     "main_data": {
         "premium_articles_data": [
             {
-                "link": "https://www.thehindu.com/news/national/what-are-the-rules-for-ias-probationers-explained/article68427004.ece",
-                "image": "https://th-i.thgim.com/public/todays-paper/tp-national/l60cib/article68424285.ece/alternates/SQUARE_80/TH19-VIJAITA-UPGQKD3182M.3.jpg.jpg",
-                "title": "What are the rules for IAS probationers?",
-                "author": "Vijaita Singh"
+                "link": "https://www.thehindu.com/opinion/lead/union-budget-2024-25-no-signs-of-learning/article68437231.ece",
+                "image": "https://th-i.thgim.com/public/incoming/5agnyf/article68437256.ece/alternates/SQUARE_80/20240723249L.jpg",
+                "title": "Union Budget 2024-25 \u2014 no signs of learning",
+                "author": "C.P. Chandrasekhar"
             },
             {
-                "link": "https://www.thehindu.com/news/national/karnataka/will-local-job-quotas-pass-the-legal-test-explained/article68426980.ece",
-                "image": "https://th-i.thgim.com/public/migration_catalog/article13954189.ece/alternates/SQUARE_80/venkat",
-                "title": "Will local job quotas pass the legal test? | Explained",
-                "author": "K. Venkataramanan"
-            },
-            {
-                "link": "https://www.thehindu.com/education/what-is-the-gender-gap-in-education-explained/article68426990.ece",
+                "link": "https://www.thehindu.com/opinion/op-ed/a-message-of-fiscal-stability-growth-continuity/article68438046.ece",
                 "image": null,
-                "title": "What is the gender gap in education? | Explained",
-                "author": "Priscilla Jebaraj"
+                "title": "Budget 2024: A message of fiscal stability, growth continuity",
+                "author": "Yuvika Singhal,"
             },
             {
-                "link": "https://www.thehindu.com/news/international/paul-kagame-spring-of-the-patriarch/article68426973.ece",
+                "link": "https://www.thehindu.com/sci-tech/science/what-are-bharat-small-reactors-and-small-modular-reactors/article68437448.ece",
                 "image": null,
-                "title": "Paul Kagame: Spring of the patriarch",
-                "author": "Priyali Prakash"
+                "title": "Budget 2024: What are \u2018Bharat Small Reactors\u2019 and small modular reactors?",
+                "author": "Vasudevan Mukunth"
+            },
+            {
+                "link": "https://www.thehindu.com/business/budget/a-budget-sans-poetry-but-filled-with-political-pragmatism/article68436549.ece",
+                "image": "https://th-i.thgim.com/public/migration_catalog/article10098341.ece/alternates/SQUARE_80/Nistula",
+                "title": "Budget 2024: A Budget sans poetry, but filled with political pragmatism",
+                "author": "Nistula Hebbar"
             }
         ],
         "main_article": {
-            "label": "Live",
-            "main_heading": "\nBiden withdraws from presidential race LIVE: Kamala vows to unite Democratic Party and defeat Trump\n",
-            "sub_heading": "Joe Biden said he will remain as President until his term ends in January 2025 and will address the nation later this week",
+            "label": "Parliament proceedings",
+            "main_heading": "\nCentre, Opposition face off in Parliament over budget\n",
+            "sub_heading": "In both Houses of Parliament, the Opposition attacked the budget for excluding non-NDA ruled States, calling it an exercise in appeasing allies",
             "author_name": " The Hindu Bureau",
-            "image_url": "https://th-i.thgim.com/public/incoming/r28crx/article68430318.ece/alternates/SQUARE_960/2024-07-21T193626Z_1793388759_RC2VZ8AA5UFA_RTRMADP_3_USA-ELECTION-BIDEN.JPG"
+            "image_url": "https://th-i.thgim.com/public/incoming/h2p66p/article68442882.ece/alternates/SQUARE_960/PTI07_24_2024_000120B.jpg"
         }
     },
     "tech_data": {
-        "tech_text": "\nMicrosoft CrowdStrike outage | How a software glitch disrupted global businesses\n",
-        "tech_image": "https://th-i.thgim.com/public/news/national/lc0r3y/article68423584.ece/alternates/SQUARE_960/KIA_Airport_05.jpg"
+        "tech_text": "\nMeta unveils biggest Llama 3 AI model, touting language and math gains closing in on OpenAI\n",
+        "tech_image": "https://th-i.thgim.com/public/incoming/hkplv3/article68440163.ece/alternates/SQUARE_960/2024-07-16T135019Z_38319922_RC26H3A5AV13_RTRMADP_3_ESSILORLUXOTTICA-SMART-GLASSES-META.JPG"
     }
 }

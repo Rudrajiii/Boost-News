@@ -6,9 +6,9 @@ const countries = {
   china: "cn",
   russia: "ru"
 };
-const API_KEY1 = "1cc928358b8e4ee5a53e7a778d1900d6";
-const API_KEY2 = "1cc928358b8e4ee5a53e7a778d1900d6";
-const API_KEY3 = "1cc928358b8e4ee5a53e7a778d1900d6";
+// const API_KEY1 = "1cc928358b8e4ee5a53e7a778d1900d6";
+// const API_KEY2 = "1cc928358b8e4ee5a53e7a778d1900d6";
+// const API_KEY3 = "1cc928358b8e4ee5a53e7a778d1900d6";
 
 
 let country;
@@ -316,7 +316,7 @@ updateCarousel();
 
 //New Headline handleing with logic
 //Backup api key = pub_48120bf874f03619430ecf1008aafce930153 -> fresh hai ekdam
-const newAPIKey = "pub_48118876f06065641b34ccaca72c0c3a9994f"; //-> ye bhi backup hai 
+// const newAPIKey = "pub_48118876f06065641b34ccaca72c0c3a9994f"; //-> ye bhi backup hai 
 const newslogo = document.getElementById('newslogo');
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
@@ -341,16 +341,16 @@ async function fetchCategoryNews(category) {
   }
 }
 
-async function fetchAINews() {
-  try {
-      let res = await fetch('/articles');
-      let data = await res.json();  
-      return data;
-  } catch (error) {
-      console.error('Error fetching AI news:', error);
-      return [];
-  }
-}
+// async function fetchAINews() {
+//   try {
+//       let res = await fetch('/articles');
+//       let data = await res.json();  
+//       return data;
+//   } catch (error) {
+//       console.error('Error fetching AI news:', error);
+//       return [];
+//   }
+// }
 
 async function fetchAINewsFromAPI() {
   const url = `https://newsdata.io/api/1/news?apikey=${newAPIKey}&q=ai`;

@@ -24,19 +24,14 @@ for div in soup.find_all('div', class_='col_l_6'):
         if a_tag:
             # Extract the URL
             link_url = a_tag.get('href')
-            
             # Extract the image source
             img_tag = figure.find('img')
             if img_tag:
-                
                 img_src = img_tag.get('data-src') or img_tag.get('src')
-                
                 if img_src and img_src.endswith('.cms'):
-                    
                     img_src = img_tag.get('src') or img_tag.get('data-src')
             else:
                 img_src = None
-            
             
             text = figure.find('figcaption').text.strip() if figure.find('figcaption') else None
             
