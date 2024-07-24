@@ -10,9 +10,7 @@ response = requests.get(url)
 response.raise_for_status()  # Check for HTTP errors
 html_content = response.text
 
-
 soup = BeautifulSoup(html_content, 'html.parser')
-
 
 scraped_data = []
 
@@ -43,7 +41,7 @@ for div in soup.find_all('div', class_='col_l_6'):
             })
 
 
-json_file_path = 'scraped_data_toi.json'
+json_file_path = '../data/scraped_data_toi.json'
 
 
 with open(json_file_path, 'w', encoding='utf-8') as json_file:

@@ -106,7 +106,7 @@ if __name__ == '__main__':
         'tech_data': tech_data
     }
     
-    with open('the_hindu.json', 'w') as json_file:
+    with open('../data/the_hindu.json', 'w') as json_file:
         json.dump(all_data, json_file, indent=4)
     
     print('Data has been saved to the_hindu.json')

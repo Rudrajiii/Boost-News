@@ -84,7 +84,7 @@ if response.status_code == 200:
     data.update(additional_data)
 
     # Save the data to a JSON file
-    with open('scraped_data_ndtv.json', 'w') as json_file:
+    with open('../data/scraped_data_ndtv.json', 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
     print("Data has been saved to scrap_data.json")

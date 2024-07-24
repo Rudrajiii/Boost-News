@@ -1,12 +1,35 @@
 from flask import Flask, render_template, jsonify, request
 from eventregistry import EventRegistry, QueryArticlesIter # type: ignore
 from secretapi import AI_API_NEWS_KEY
-
+import subprocess
+import concurrent.futures
+from flask_caching import Cache
 app = Flask(__name__)
-
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
+
+@cache.cached(timeout=60*60, key_prefix='scrape_results')
+def run_script(script):
+    try:
+        result = subprocess.run(['python', script], capture_output=True, text=True)
+        return {
+            'script': script,
+            'stdout': result.stdout,
+            'stderr': result.stderr
+        }
+    except Exception as e:
+        return {'script': script, 'error': str(e)}
+
+@app.route('/scrape', methods=['GET'])
+def scrape():
+    scripts = ['../scraper/ndtv.py', '../scraper/the_hindu.py', '../scraper/times_of_india.py']
+    
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        results = list(executor.map(run_script, scripts))
+    
+    return jsonify(results)
 
 @app.route('/articles')
 def get_articles():

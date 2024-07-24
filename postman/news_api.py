@@ -1,7 +1,7 @@
 from eventregistry import EventRegistry, QueryArticlesIter # type: ignore
 import json
-
-er = EventRegistry(apiKey='YOUR_API_KEY')
+from secretapi import AI_API_NEWS_KEY
+er = EventRegistry(apiKey=AI_API_NEWS_KEY)
 
 query = {
     "$query": {
