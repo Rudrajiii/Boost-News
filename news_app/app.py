@@ -3,14 +3,15 @@ from eventregistry import EventRegistry, QueryArticlesIter # type: ignore
 from secretapi import AI_API_NEWS_KEY
 import subprocess
 import concurrent.futures
-from flask_caching import Cache
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
-@cache.cached(timeout=60*60, key_prefix='scrape_results')
 def run_script(script):
     try:
         result = subprocess.run(['python', script], capture_output=True, text=True)
@@ -28,7 +29,6 @@ def scrape():
     
     with concurrent.futures.ThreadPoolExecutor() as executor:
         results = list(executor.map(run_script, scripts))
-    
     return jsonify(results)
 
 @app.route('/articles')
@@ -70,6 +70,7 @@ def get_articles():
         articles.append(article_data)
 
     return jsonify(articles)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
