@@ -33,7 +33,7 @@ def main_ai_handle(url):
         }
         BIG_DATA.append(data_object)
 
-    with open('ai_headlines.json', 'w', encoding='utf-8') as json_file:
+    with open('../data/ai_headlines.json', 'w', encoding='utf-8') as json_file:
         json.dump(BIG_DATA, json_file, indent=4, ensure_ascii=False)
 
     print("Data scraped and stored in ai_headlines.json")
