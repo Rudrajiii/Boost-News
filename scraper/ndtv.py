@@ -50,12 +50,24 @@ if response.status_code == 200:
     if main_article:
         main_article_title = main_article.find('h1', class_='crd_ttl7').get_text(strip=True)
         main_article_link = main_article.find('a')['href']
-        main_article_image = main_article.find('img')['src']
+
+
+        #? Checks if there is a image or video
+        main_article_image_tag = main_article.find('img')
+        if main_article_image_tag:
+            main_article_image = main_article_image_tag['src']
+        else:
+            main_article_video_tag = main_article.find('video')
+            if main_article_video_tag:
+                main_article_source_tag = main_article_video_tag.find('source')
+                main_article_image = main_article_source_tag['src'] if main_article_source_tag else None
+            else:
+                main_article_image = None
         
         data['main_article'] = {
             'title': main_article_title,
             'link': main_article_link,
-            'image': main_article_image
+            'image/video': main_article_image
         }
     else:
         data['main_article'] = None

@@ -2,40 +2,40 @@
     "main_data": {
         "premium_articles_data": [
             {
-                "link": "https://www.thehindu.com/opinion/lead/union-budget-2024-25-no-signs-of-learning/article68437231.ece",
-                "image": "https://th-i.thgim.com/public/incoming/5agnyf/article68437256.ece/alternates/SQUARE_80/20240723249L.jpg",
-                "title": "Union Budget 2024-25 \u2014 no signs of learning",
-                "author": "C.P. Chandrasekhar"
+                "link": "https://www.thehindu.com/sport/cricket/does-joe-root-have-the-legs-to-scale-mount-tendulkar/article68479195.ece",
+                "image": "https://th-i.thgim.com/public/sport/wosgve/article68479189.ece/alternates/SQUARE_80/GettyImages-2160843116.jpg",
+                "title": "Does Joe Root have the legs to scale Mount Tendulkar?",
+                "author": "K C Vijaya Kumar"
             },
             {
-                "link": "https://www.thehindu.com/opinion/op-ed/a-message-of-fiscal-stability-growth-continuity/article68438046.ece",
-                "image": null,
-                "title": "Budget 2024: A message of fiscal stability, growth continuity",
-                "author": "Yuvika Singhal,"
+                "link": "https://www.thehindu.com/news/national/kerala/death-rains-on-wayanad/article68477646.ece",
+                "image": "https://th-i.thgim.com/public/news/national/f4xiyk/article66926714.ece/alternates/SQUARE_80/abdul%20latheef%20naha.jpg",
+                "title": "Death rains on Wayanad",
+                "author": "Abdul Latheef Naha"
             },
             {
-                "link": "https://www.thehindu.com/sci-tech/science/what-are-bharat-small-reactors-and-small-modular-reactors/article68437448.ece",
+                "link": "https://www.thehindu.com/opinion/the-problem-with-the-early-warning-kerala-did-or-didnt-receive/article68477540.ece",
                 "image": null,
-                "title": "Budget 2024: What are \u2018Bharat Small Reactors\u2019 and small modular reactors?",
+                "title": "The problem with the early landslide warning Kerala did or didn\u2019t receive",
                 "author": "Vasudevan Mukunth"
             },
             {
-                "link": "https://www.thehindu.com/business/budget/a-budget-sans-poetry-but-filled-with-political-pragmatism/article68436549.ece",
-                "image": "https://th-i.thgim.com/public/migration_catalog/article10098341.ece/alternates/SQUARE_80/Nistula",
-                "title": "Budget 2024: A Budget sans poetry, but filled with political pragmatism",
-                "author": "Nistula Hebbar"
+                "link": "https://www.thehindu.com/sport/tennis/why-tennis-once-tenuous-relationship-with-the-olympics-has-changed/article68479178.ece",
+                "image": null,
+                "title": "Why tennis\u2019 once tenuous relationship with the Olympics has changed",
+                "author": "N. Sudarshan"
             }
         ],
         "main_article": {
-            "label": "Parliament proceedings",
-            "main_heading": "\nOpposition slams budget as \u2018unfair\u2019; government denies charge\n",
-            "sub_heading": "In both Houses of Parliament, the Opposition attacked the budget for excluding non-NDA ruled States, calling it an exercise in appeasing allies",
+            "label": "India\n",
+            "main_heading": "\nSix, including five policemen, sacked for \u2018anti-national activities\u2019 in Jammu and Kashmir\n",
+            "sub_heading": "Over 60 government employees sacked after amendments made to Article 311 which allows arrest without any departmental enquiry",
             "author_name": " The Hindu Bureau",
-            "image_url": "https://th-i.thgim.com/public/incoming/h2p66p/article68442882.ece/alternates/SQUARE_960/PTI07_24_2024_000120B.jpg"
+            "image_url": "https://th-i.thgim.com/public/news/national/other-states/euf05p/article53537412.ece/alternates/SQUARE_960/civilsecretariatsrinagar"
         }
     },
     "tech_data": {
-        "tech_text": "\nMeta unveils biggest Llama 3 AI model, touting language and math gains closing in on OpenAI\n",
-        "tech_image": "https://th-i.thgim.com/public/incoming/hkplv3/article68440163.ece/alternates/SQUARE_960/2024-07-16T135019Z_38319922_RC26H3A5AV13_RTRMADP_3_ESSILORLUXOTTICA-SMART-GLASSES-META.JPG"
+        "tech_text": "\nTurkiye blocks access to Instagram in response to removal of posts on Hamas chief: Report\n",
+        "tech_image": "https://th-i.thgim.com/public/incoming/22isda/article68478976.ece/alternates/SQUARE_960/AFP_36879XK.jpg"
     }
 }

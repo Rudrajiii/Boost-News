@@ -1,182 +1,182 @@
 [
     {
-        "heading": "NIST releases a tool for testing AI model risk",
-        "author": "Kyle Wiggers",
-        "description": "The National Institute of Standards and Technology (NIST), the U.S. Commerce Department agency that develops and tests tech for the U.S. government, companies and the broader public, has re-released a…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2022/01/GettyImages-1314979456.jpg?w=1024"
+        "heading": "Tesla Dojo: Elon Musk’s big plan to build an AI supercomputer, explained",
+        "author": "Rebecca Bellan",
+        "description": "Dojo is Tesla’s custom-built supercomputer that’s designed to train its “Full Self-Driving” neural networks.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/08/tesla-dojo.jpg?w=430"
     },
     {
-        "heading": "Apple signs the White House’s commitment to AI safety",
+        "heading": "Character.AI CEO Noam Shazeer returns to Google",
+        "author": "Ivan Mehta",
+        "description": "In a big move, Character.AI co-founder and CEO Noam Shazeer is returning to Google after leaving the company in October 2021 to found the a16z-backed chatbot startup. In his previous…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/08/Noam-Shazeer.jpg?w=430"
+    },
+    {
+        "heading": "Cloud infrastructure revenue approached $80 billion this quarter",
+        "author": "Ron Miller",
+        "description": "The cloud infrastructure market has put the doldrums of 2023 firmly behind it with another big quarter. Revenue continues to grow at a brisk pace, fueled by interest in AI. Synergy Research reports revenue totaled $79 billion for the quarter, up $14.1 billion or 22% from last year. This marked…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/08/GettyImages-1486318910.jpg?w=720"
+    },
+    {
+        "heading": "AI friends, deepfake foes and which Tiger Global partner is leaving now",
+        "author": "No author",
+        "description": "AI hardware has taken on a new shape with Friend’s $99 necklace — a pendant that gives you an AI friend to talk to and…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/05/gpt4o-featured.png?w=430"
+    },
+    {
+        "heading": "AI music startup Suno claims training model on copyrighted music is ‘fair use’",
+        "author": "Lauren Forristal",
+        "description": "Following the recent lawsuit filed by the Recording Industry Association of America (RIAA) against music generation startups Udio and Suno, Suno admitted in a court filing on Thursday that it did, in…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2021/03/GettyImages-1215540403.jpg?w=430"
+    },
+    {
+        "heading": "iPad sales help bail out Apple amid a continued iPhone slide",
+        "author": "Brian Heater",
+        "description": "In spite of a drop for the quarter, iPhone remained Apple’s most important category by a wide margin.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2021/06/wwdc-2021-tim-cook-screens-e1623094107182.jpg?w=430"
+    },
+    {
+        "heading": "Microsoft now lists OpenAI as a competitor in AI and search",
         "author": "Maxwell Zeff",
-        "description": "Apple joins 15 other tech companies — including Google, Meta, Microsoft and OpenAI — that committed to the White House’s rules for developing generative AI.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2022/09/AppleEvent.SEP07Keynote.Tim_Cook.03.jpg?w=1024"
+        "description": "Microsoft has a long and tangled history with OpenAI, having invested a reported $13 billion in the ChatGPT maker as part of a long-term partnership. As part of the deal,…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2023/11/GettyImages-1778706504.jpg?w=430"
     },
     {
-        "heading": "Privacy watchdog says it’s ‘surprised’ by Elon Musk opting user data into Grok AI training",
+        "heading": "Google brings Gemini-powered search history and Lens to Chrome desktop",
+        "author": "Ivan Mehta",
+        "description": "Google Thursday said that it is introducing new Gemini-powered features for Chrome’s desktop version, including Lens for desktop, tab compare for shopping assistance, and natural language integration for search history.…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/08/Chrome-AI-blog.jpg?w=430"
+    },
+    {
+        "heading": "Heeyo built an AI chatbot to be a billion kids’ interactive tutor and friend",
+        "author": "Rebecca Bellan",
+        "description": "When Xiaoyin Qu was growing up in China, she was obsessed with learning how to build paper airplanes that could do flips in the air. Her parents, though, didn’t have…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/Iphone3-7.jpg?w=430"
+    },
+    {
+        "heading": "Google Cloud expands its database portfolio with new AI capabilities",
+        "author": "Frederic Lardinois",
+        "description": "Google’s new features include Gemini in BigQuery and Looker to help users with data engineering and analysis.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/GettyImages-2148009757.jpg?w=430"
+    },
+    {
+        "heading": "Google Cloud now has a dedicated cluster of Nvidia GPUs for Y Combinator startups",
+        "author": "Maxwell Zeff",
+        "description": "Google Cloud is giving Y Combinator startups access to a dedicated, subsidized cluster of Nvidia graphics processing units and Google tensor processing units to build AI models. It’s part of…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/04/GettyImages-1244428522.jpg?w=430"
+    },
+    {
+        "heading": "The EU’s AI Act is now in force",
         "author": "Natasha Lomas",
-        "description": "The language is ambiguous, so it’s not clear whether X is helping itself to all user data for training Grok or whether this processing refers only to user interactions with…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/GettyImages-2158243807.jpg?w=1024"
+        "description": "The European Union’s risk-based regulation for applications of artificial intelligence has come into force starting from today.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2023/10/GettyImages-1452604857.jpg?w=430"
     },
     {
-        "heading": "TechCrunch Minute: Microsoft brings more generative AI to Bing",
-        "author": "Anthony Ha",
-        "description": "Bing is the latest search engine to introduce generative AI into its results, with Microsoft announcing that it’s making Bing generative search available to a…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/YouTube-Thumb-Text-6.png?w=1024"
+        "heading": "Zuckerberg says Meta will need 10x more computing power to train Llama 4 than Llama 3",
+        "author": "Ivan Mehta",
+        "description": "Meta, which develops one of the biggest foundational open source large language models, Llama, believes it will need significantly more computing power to train models in the future. Mark Zuckerberg…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/05/meta-getty.jpg?w=430"
     },
     {
-        "heading": "Here’s how to disable X (Twitter) from using your data to train its Grok AI",
-        "author": "Aisha Malik",
-        "description": "The good news is that you can switch off the new data-sharing setting and also delete your conversation history with the AI.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2023/08/twitter-x-musk-graffiti.jpg?w=1024"
+        "heading": "OpenAI pledges to give U.S. AI Safety Institute early access to its next model",
+        "author": "Kyle Wiggers",
+        "description": "OpenAI CEO Sam Altman says that OpenAI is working with the U.S. AI Safety Institute, a federal government body that aims to assess and address risks in AI platforms, on…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2019/10/Sam-Altman-OpenAI-DSC02874.jpg?w=430"
+    },
+    {
+        "heading": "Meta says India is the largest market for Meta AI usage",
+        "author": "Ivan Mehta",
+        "description": "WhatsApp’s massive 500 million users in India have supercharged Meta’s AI ambitions. Meta CFO Susan Li said Wednesday that India is the largest market in terms of Meta AI usage,…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2023/09/Screen-Shot-2023-09-27-at-12.33.24-PM.png?w=430"
+    },
+    {
+        "heading": "Google releases new ‘open’ AI models with a focus on safety",
+        "author": "Kyle Wiggers",
+        "description": "Google has released a trio of new, “open” generative AI models that it’s calling “safer,” “smaller” and “more transparent” than most — a bold claim, to be sure. They’re additions…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2020/01/GettyImages-1192414131.jpg?w=430"
+    },
+    {
+        "heading": "AI startups ramp up federal lobbying efforts",
+        "author": "Kyle Wiggers",
+        "description": "AI lobbying at the U.S. federal level is intensifying in the midst of a continued generative AI boom and an election year that could influence future AI regulation. New data…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2020/07/maxresdefault_d70b6d.jpg?w=430"
+    },
+    {
+        "heading": "Copyright Office tells Congress: ‘Urgent need’ to outlaw AI-powered impersonation",
+        "author": "Devin Coldewey",
+        "description": "The U.S. Copyright Office has issued the first part of a report on how AI may affect its domain, and its first recommendation out of the gate is: we need…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2021/02/GettyImages-1203141035-e1656450996554.jpg?w=430"
     },
     {
         "heading": "ChatGPT: Everything you need to know about the AI-powered chatbot",
         "author": "Kyle Wiggers",
         "description": "ChatGPT, OpenAI’s text-generating AI chatbot, has taken the world by storm since its launch in November 2022. What started as a tool to hyper-charge productivity through writing essays and code…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2023/03/GettyImages-1462188043-e1686340799615.jpg?w=1024"
+        "image_url": "https://techcrunch.com/wp-content/uploads/2023/03/GettyImages-1462188043-e1686340799615.jpg?w=430"
     },
     {
-        "heading": "With Google in its sights, OpenAI unveils SearchGPT",
-        "author": "Kyle Wiggers",
-        "description": "OpenAI may have designs to get into the search game — challenging not only upstarts like Perplexity, but Google and Bing, too. The company on Thursday unveiled SearchGPT, a search…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/05/openAI-spiral-color.jpg?w=1024"
-    },
-    {
-        "heading": "Google makes its Gemini chatbot faster and more widely available",
-        "author": "Kyle Wiggers",
-        "description": "In its bid to maintain pace with generative AI rivals like Anthropic and OpenAI, Google is rolling out updates to the no-fee tier of Gemini, its AI-powered chatbot. The updates…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/02/GettyImages-1998277195-1.jpg?w=1024"
-    },
-    {
-        "heading": "TechCrunch Minute: Meta’s new ‘Imagine me’ feature lets you generate AI selfies",
-        "author": "Amanda Silberling",
-        "description": "Meta’s AI integrations into apps like Instagram and Facebook have felt pretty useless so far. If I’m just trying to find my friend’s Instagram, why…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/YouTube-Thumb-Text-4-4.png?w=1024"
-    },
-    {
-        "heading": "ZoomInfo alum raises $15M for startup that builds AI sales engineers",
-        "author": "Marina Temkin",
-        "description": "Until a year ago, Arjun Pillai had the comfortable yet important role of chief data officer at ZoomInfo, a B2B database company. But the serial entrepreneur was getting antsy. He…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-2080972792.jpg?w=1024"
-    },
-    {
-        "heading": "Intron Health gets backing for its speech-recognition tool that recognizes African accents",
-        "author": "Annie Njanja",
-        "description": "Voice recognition is getting integrated in nearly all facets of modern living, but there remains a big gap: Speakers of minority languages and those with thick accents or speech disorders…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/Picture1-e1721892283566.png?w=941"
-    },
-    {
-        "heading": "Oversight Board wants Meta to refine its policies around AI-generated explicit images",
+        "heading": "How to enable Apple Intelligence on your iPhone",
         "author": "Ivan Mehta",
-        "description": "The Board wants Meta to change the terminology it uses for labeling explicit, AI-generated images from “derogatory” to “non-consensual.”",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2022/06/meta-housing-targeting.jpg?w=1024"
+        "description": "If you are on the developer beta, you can only use Apple Intelligence features if your language is set to U.S. English and region is set to U.S.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/06/wwdc24-Apple-intelligence-AI-for-the-rest-of-us-e1718051510774.jpg?w=430"
     },
     {
-        "heading": "A new Chinese video-generating model appears to be censoring politically sensitive topics",
+        "heading": "This Week in AI: Companies are growing skeptical of AI’s ROI",
         "author": "Kyle Wiggers",
-        "description": "A powerful new video-generating AI model became widely available today — but there’s a catch: The model appears to be censoring topics deemed too politically sensitive by the government in…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2021/03/GettyImages-1305264243.jpg?w=1024"
+        "description": "Hiya, folks, welcome to TechCrunch’s regular AI newsletter. This week in AI, Gartner released a report suggesting that around a third of generative AI projects in the enterprise will be…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2014/12/darpa_big_data.jpg?w=430"
     },
     {
-        "heading": "Mistral’s Large 2 is its answer to Meta and OpenAI’s latest models",
-        "author": "Maxwell Zeff",
-        "description": "For frontier AI models, when it rains, it pours. Mistral released a fresh new flagship model on Wednesday, Large 2, which it claims to be on par with the latest…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-2147859992-e1713960898378.webp?w=1024"
-    },
-    {
-        "heading": "Researchers are training home robots in simulations based on iPhone scans",
+        "heading": "Neura shows off humanoid robot 4NE-1",
         "author": "Brian Heater",
-        "description": "Researchers at MIT CSAIL this week are showcasing a new method for training home robots in simulation.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/home-robot-7-24-2024.jpg?w=1024"
+        "description": "This week’s video shows 4NE-1 doing a lot; in some sense, it’s doing more than we’ve seen from other humanoids in the space.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/neura-robot-ironing.jpg?w=430"
     },
     {
-        "heading": "Bing previews its answer to Google’s AI Overviews",
+        "heading": "Tezi is building an AI agent for hiring managers",
+        "author": "Ron Miller",
+        "description": "AI agents are all the rage right now, and Tezi, an early-stage startup, is working on one to help HR teams find the perfect candidates for a job opening. The…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/GettyImages-1093325226-1.jpg?w=430"
+    },
+    {
+        "heading": "Sybill raises $11M for its AI assistant that helps salespeople reduce administrative burden",
+        "author": "Kate Park",
+        "description": "Sybill, a startup that has built an AI assistant specifically for sales reps, has raised $11 million in a Series A round led by Greycroft.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2022/06/GettyImages-1254060978.jpg?w=430"
+    },
+    {
+        "heading": "Leaf helps farms decipher the troves of data they generate",
+        "author": "Rebecca Szkutak",
+        "description": "Farms produce a lot of data. From machines to irrigation systems, farms generate a lot of information that could be helpful to both them and the companies that serve them.…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/bailey_headshot_2020-11.jpg?w=430"
+    },
+    {
+        "heading": "Checkly tests software by mimicking the way people use it",
         "author": "Kyle Wiggers",
-        "description": "Microsoft this afternoon previewed its answer to Google’s AI-powered search experiences: Bing generative search. Available for only a “small percentage” of users at the moment, Bing generative search, underpinned by…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2023/02/chatgpt-bing.jpg?w=1024"
+        "description": "Checkly helps devs get signals about an app’s performance and downtime, offering a set of subscription-based synthetic monitoring tools.",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2022/09/GettyImages-1361938330.jpg?w=430"
     },
     {
-        "heading": "This Week in AI: How Kamala Harris might regulate AI",
-        "author": "Kyle Wiggers",
-        "description": "Hiya, folks, welcome to TechCrunch’s regular AI newsletter. Last Sunday, President Joe Biden announced that he no longer plans to seek reelection, instead offering his “full endorsement” of VP Kamala…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2020/08/GettyImages-1090431902.jpg?w=1024"
-    },
-    {
-        "heading": "VCs are still pouring billions into generative AI startups",
-        "author": "Kyle Wiggers",
-        "description": "But the fate of many generative AI businesses — even the best-funded ones — looks murky.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/money-firehose.jpg?w=1024"
-    },
-    {
-        "heading": "TechCrunch Minute: A UK school was reprimanded for unlawful use of facial-recognition technology",
-        "author": "Amanda Silberling",
-        "description": "Today’s story takes us to a high school on the outskirts of Essex, which has ended up on the wrong side of the U.K.’s GDPR…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/YouTube-Thumb-Text-3-1.png?w=1024"
-    },
-    {
-        "heading": "Colin Kaepernick lost control of his story. Now he wants to help creators own theirs",
+        "heading": "OpenAI endorses Senate bills that could shape America’s AI policy",
         "author": "Maxwell Zeff",
-        "description": "Thousands of stories have been written about former NFL quarterback and civil rights activist Colin Kaepernick. If anyone knows a thing or two about losing control of your own narrative,…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/ColinKaep.jpg?w=1024"
+        "description": "A lot of AI bills are flying around Congress these days, and OpenAI is throwing its weight behind some of them. OpenAI endorsed three Senate bills on Tuesday which could…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2023/11/GettyImages-1778705142.jpg?w=430"
     },
     {
-        "heading": "‘Model collapse’: Scientists warn against letting AI eat its own tail",
-        "author": "Devin Coldewey",
-        "description": "If the models continue eating each other’s data, perhaps without even knowing it, they’ll progressively get weirder and dumber until they collapse.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/GettyImages-473759332.jpg?w=1024"
-    },
-    {
-        "heading": "Announcing the agenda for the AI Stage at TechCrunch Disrupt 2024",
-        "author": "Devin Coldewey",
-        "description": "We’re so excited to announce that we’ve added a dedicated AI Stage presented by Google Cloud to TechCrunch Disrupt 2024. It joins Fintech, SaaS and Space as the other industry-focused…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/AI-Stage-Article-Image-Header-1920x1080@1x.png?w=1024"
-    },
-    {
-        "heading": "After AgentGPT’s success, Reworkd pivots to web-scraping AI agents",
+        "heading": "OpenAI releases ChatGPT’s hyperrealistic voice to some paying users",
         "author": "Maxwell Zeff",
-        "description": "Reworkd’s founders went viral on GitHub last year with AgentGPT, a free tool to build AI agents that acquired more than 100,000 daily users in a week. This earned them…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/Reworkd2.jpg?w=1024"
+        "description": "OpenAI began rolling out ChatGPT’s Advanced Voice Mode on Tuesday, giving users their first access to GPT-4o’s hyperrealistic audio responses. The alpha version will be available to a small group…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/OpenAI-ChatGPT-voice.webp?w=430"
     },
     {
-        "heading": "Cracking the AI and consumer code with early Zoom-backer Maven Ventures",
-        "author": "No author",
-        "description": "Maven Ventures general partner Sara Deshpande has been investing in the consumer tech space for a decade. Over time, the seed-stage venture firm has backed…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/GettyImages-2157589971.jpg?w=1024"
+        "heading": "Airtable acquihires onboarding startup Dopt for AI talent",
+        "author": "Frederic Lardinois",
+        "description": "Airtable today announced that it has acquired Dopt, a startup focused on helping other startups build product onboarding experiences for new users. Earlier this year, Dopt introduced a number of…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/HowieLiu-horizontal.jpg?w=430"
     },
     {
-        "heading": "X launches underwhelming Grok-powered ‘More About This Account’ feature",
-        "author": "Ivan Mehta",
-        "description": "Since launching xAI last year, Elon Musk has been using X as a sandbox to test some of the Grok model’s AI capabilities. Beyond the basic chatbot, X uses the…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2023/08/twitter-x-logo-musk-2.jpg?w=1024"
-    },
-    {
-        "heading": "Lakera, which protects enterprises from LLM vulnerabilities, raises $20M",
-        "author": "Paul Sawers",
-        "description": "Lakera, a Swiss startup that’s building technology to protect generative AI applications from malicious prompts and other threats, has raised $20 million in a Series A round led by European…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/Lakera-Founders-3-e1721739364974.jpg?w=1024"
-    },
-    {
-        "heading": "Mark Zuckerberg imagines content creators making AI clones of themselves",
-        "author": "Kyle Wiggers",
-        "description": "Content creators are busy people. Most spend more than 20 hours a week creating new content for their respective corners of the web. That doesn’t leave much time for audience…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/05/zuckerberg-drip.jpg?w=1024"
-    },
-    {
-        "heading": "Elon Musk sets 2026 Optimus sale date. Here’s where other humanoid robots stand.",
-        "author": "Brian Heater",
-        "description": "Tesla was not the first company to begin working on a humanoid form factor, but while being the first to market does carry weight in this high-tech space, we’re at…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/Tesla-Bot-AI.jpeg?w=1024"
-    },
-    {
-        "heading": "OpenAI-backed legal tech startup Harvey raises $100M",
-        "author": "Kyle Wiggers",
-        "description": "Harvey, a startup building what it describes as an AI-powered “copilot” for lawyers, has raised $100 million in a Series C round led by GV, Google’s corporate venture arm. The…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2023/09/GettyImages-1474442258.jpg?w=1024"
-    },
-    {
-        "heading": "FTC is investigating how companies are using AI to base pricing on consumer behavior",
-        "author": "Aisha Malik",
-        "description": "The Federal Trade Commission announced on Tuesday that it’s ordering eight companies that offer AI-powered “surveillance service pricing” to turn over information about the potential impact these products have on…",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2023/03/lina-khan-image.jpg?w=1024"
+        "heading": "TechCrunch Minute: Will AI get dumber?",
+        "author": "Anthony Ha",
+        "description": "Although AI models have made big breakthroughs in the last few years, there’s now a risk that they could get dumber and even collapse, according…",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2024/07/snake.png?w=430"
     }
 ]
